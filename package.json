@@ -36,8 +36,8 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "webpack-start": "npx webpack serve --open",
+    "start": "cross-env PORT=3001 react-scripts start",
+    "webpack-start": "npx webpack serve",
     "format": "prettier --write src",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -71,6 +71,7 @@
     "@types/js-cookie": "^3.0.6",
     "@types/redux-persist": "^4.0.0",
     "babel-loader": "^10.0.0",
+    "cross-env": "^7.0.3",
     "css-loader": "^7.1.2",
     "dotenv": "^16.5.0",
     "eslint": "^8.57.0",
