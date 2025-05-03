@@ -63,6 +63,9 @@
       "last 1 safari version"
     ]
   },
+  "sideEffects": [
+    "./src/utils/i18n.ts"
+  ],
   "devDependencies": {
     "@babel/core": "^7.26.10",
     "@babel/preset-env": "^7.26.9",

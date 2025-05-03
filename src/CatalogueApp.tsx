@@ -1,38 +1,26 @@
-// In `catalogue/CatalogueApp.tsx`
 import React, { useEffect } from 'react'
 import { useAppDispatch } from './app/hooks'
 import { setAuthData } from './features/auth.slice'
-import { Language, UserType } from './types/auth'
-import { setNotification } from './features/notifications.slice'
-import { NotificationType } from './types/notification'
+import { CatalogueAppProps } from './types/common'
+import { useTranslation } from 'react-i18next'
+import './utils/i18n'
 
-interface CatalogueAppProps {
-  language: Language
-  username?: string
-  type?: UserType
-}
-
-const CatalogueApp: React.FC<CatalogueAppProps> = ({ language, username, type }) => {
+const CatalogueApp: React.FC<CatalogueAppProps> = (props) => {
   const dispatch = useAppDispatch()
+  const { t } = useTranslation()
+
   useEffect(() => {
     dispatch(
-      setNotification({
-        type: NotificationType.Info,
-        text: 'Hello world',
-      }),
-    )
-    dispatch(
       setAuthData({
-        username: username,
-        language: language,
-        type: type,
+        ...props,
       }),
     )
   }, [])
+  console.log('PP')
   return (
-    <div>
-      <h1>Catalogue App</h1>
-    </div>
+    <>
+      <h1>{t('title')}</h1>
+    </>
   )
 }
 

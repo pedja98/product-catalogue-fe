@@ -1,6 +1,5 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import './utils/i18n'
 import CatalogueApp from './CatalogueApp'
 import { Provider } from 'react-redux'
 import { store } from './app/store'
