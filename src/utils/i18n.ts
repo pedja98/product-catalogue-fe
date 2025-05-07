@@ -3,7 +3,7 @@ import { initReactI18next } from 'react-i18next'
 import HttpBackend from 'i18next-http-backend'
 import { store } from '../app/store'
 import { Language } from '../types/auth'
-console.log(store.getState().auth)
+
 i18n
   .use(HttpBackend)
   .use(initReactI18next)
@@ -21,11 +21,8 @@ i18n
     },
   })
 
-store.subscribe(() => {
-  const newLanguage = store.getState().auth.language.toLowerCase()
-  if (newLanguage !== i18n.language) {
-    i18n.changeLanguage(newLanguage)
-  }
-})
+export const changeLanguageManually = (lang: Language) => {
+  i18n.changeLanguage(lang.toLowerCase())
+}
 
 export default i18n

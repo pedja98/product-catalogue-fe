@@ -5,3 +5,10 @@ export interface CatalogueAppProps {
   username?: string
   type?: UserType
 }
+
+export enum ModuleOptions {
+  Home = 'home',
+  Characteristics = 'characteristics',
+  TariffPlans = 'tariffPlans',
+  Addons = 'addons',
+}

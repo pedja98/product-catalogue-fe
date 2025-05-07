@@ -1,3 +1,11 @@
 {
-  "title": "Product catalogue"
+  "title": "Product catalogue",
+  "pageNotFound": "Page not found",
+  "backToPreviousPage": "Back to previous page",
+  "navbar": {
+    "home": "Home",
+    "characteristics": "Characteristics",
+    "tariffPlans": "Tariff Plans",
+    "addons": "Addons"
+  }
 }

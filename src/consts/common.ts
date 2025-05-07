@@ -1,3 +1,5 @@
+import { ModuleOptions } from '../types/common'
+
 export const PrimaryThemeColor = '#6e6e6e'
 
 export const SecondaryThemeColor = '#454444'
@@ -15,3 +17,10 @@ export const PhonePattern = /^\+?\d+$/
 export const PasswordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/
 
 export const EmptyValue = '/'
+
+export const NavbarLinks = [
+  ModuleOptions.Home,
+  ModuleOptions.Characteristics,
+  ModuleOptions.TariffPlans,
+  ModuleOptions.Addons,
+]
