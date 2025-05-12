@@ -81,7 +81,7 @@ export default createTheme({
       },
       styleOverrides: {
         root: {
-          backgroundColor: PrimaryThemeColor,
+          backgroundColor: TernaryColor,
           color: WhiteTeamColor,
         },
         contained: {

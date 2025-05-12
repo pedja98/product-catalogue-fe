@@ -5,8 +5,10 @@ import Navbar from '../components/Navbar'
 const Layout = () => {
   return (
     <Grid container sx={{ display: 'flex', flexDirection: 'row' }}>
-      <Navbar />
-      <Grid item sx={{ marginLeft: '200px', width: '100%' }}>
+      <Grid>
+        <Navbar />
+      </Grid>
+      <Grid item sx={{ pl: 2 }}>
         <Outlet />
       </Grid>
     </Grid>

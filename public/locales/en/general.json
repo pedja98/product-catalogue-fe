@@ -2,6 +2,7 @@
   "title": "Product catalogue",
   "pageNotFound": "Page not found",
   "backToPreviousPage": "Back to previous page",
+  "saveButtonLabel": "Save",
   "navbar": {
     "home": "Home",
     "characteristics": "Characteristics",

@@ -7,6 +7,9 @@ import './utils/i18n'
 import { changeLanguageManually } from './utils/i18n'
 import Routes from './router/routes'
 import { HashRouter } from 'react-router-dom'
+import { ThemeProvider } from '@emotion/react'
+import { CssBaseline } from '@mui/material'
+import pcTheme from './theme/pcTheme'
 
 const CatalogueApp: React.FC<CatalogueAppProps> = (props) => {
   const dispatch = useAppDispatch()
@@ -17,9 +20,12 @@ const CatalogueApp: React.FC<CatalogueAppProps> = (props) => {
   }, [])
 
   return (
-    <HashRouter>
-      <Routes />
-    </HashRouter>
+    <ThemeProvider theme={pcTheme}>
+      <CssBaseline />
+      <HashRouter>
+        <Routes />
+      </HashRouter>
+    </ThemeProvider>
   )
 }
 

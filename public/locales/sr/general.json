@@ -2,6 +2,7 @@
   "title": "Produkt katalog",
   "pageNotFound": "Stranica nije pronadjena",
   "backToPreviousPage": "Vratite se na predhodnu stranicu",
+  "saveButtonLabel": "Sačuvaj",
   "navbar": {
     "home": "Početna",
     "characteristics": "Karakteristike",

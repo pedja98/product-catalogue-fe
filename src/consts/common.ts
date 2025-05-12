@@ -24,3 +24,16 @@ export const NavbarLinks = [
   ModuleOptions.TariffPlans,
   ModuleOptions.Addons,
 ]
+
+export const GridFieldTypes = {
+  STRING: 'string',
+  NUMBER: 'number',
+  SELECT: 'select',
+  LINK: 'link',
+  PASSWORD: 'password',
+  MULTISELECT: 'multiselect',
+  AREA: 'area',
+  AUTOCOMPLETE: 'autocomplete',
+  DATE_TIME: 'dateTime',
+  BUTTON: 'button',
+} as const
