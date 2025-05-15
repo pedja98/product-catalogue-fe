@@ -37,3 +37,11 @@ export const GridFieldTypes = {
   DATE_TIME: 'dateTime',
   BUTTON: 'button',
 } as const
+
+export const PcApiTags = {
+  CHARACTERISTICS: 'Characteristics',
+  ADDONS: 'Addons',
+  TARIFF_PLANS: 'TariffPlans',
+  TARIFF_PLAN_CHARACTERISTICS: 'TariffPlanCharacteristics',
+  TARIFF_PLAN_DISCOUNTS: 'TariffPlanDiscounts',
+}

@@ -8,7 +8,7 @@ const Layout = () => {
       <Grid>
         <Navbar />
       </Grid>
-      <Grid item sx={{ pl: 2 }}>
+      <Grid item sx={{ pl: 2, width: '80%' }}>
         <Outlet />
       </Grid>
     </Grid>

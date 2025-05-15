@@ -32,7 +32,9 @@ const CharacteristicsSavePage = () => {
           return <GridField key={label.key} gridFieldData={gridFieldData} label={label} handleChange={handleChange} />
         })}
         <Grid item sx={{ width: '100%' }}>
-          <Button sx={{ width: '100%' }}>{t('general:saveButtonLabel')}</Button>
+          <Button variant='contained' sx={{ width: '100%' }}>
+            {t('general:saveButtonLabel')}
+          </Button>
         </Grid>
       </Grid>
     </Grid>

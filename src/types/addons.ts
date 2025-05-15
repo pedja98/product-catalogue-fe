@@ -1,16 +1,11 @@
-export interface SaveCharacteristic {
-  name: string
-  identifire: string
-  value: string
-  description: string
-}
-
-export interface Characteristic {
+export interface Addon {
   id?: string
   name: Record<string, string>
   identifier: string
-  value: string
   description?: string
+  price: number
+  validFrom: string
+  validTo?: string
   createdByUser: string
   modifiedByUser?: string
   dateCreated?: string
