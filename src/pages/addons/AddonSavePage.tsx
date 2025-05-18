@@ -13,6 +13,7 @@ import { ApiException } from '../../types/common'
 import { useCreateAddonMutation } from '../../app/apis/addons.api'
 import { getAddonSaveLabels, getSaveAddonGridData } from '../../transformers/addons'
 import { SaveAddonFormInitialState } from '../../consts/addon'
+import { Dayjs } from 'dayjs'
 
 const AddonSavePage = () => {
   const { t } = useTranslation()
@@ -33,6 +34,13 @@ const AddonSavePage = () => {
     }))
   }, [])
 
+  const handleChangeDateTimePicker = useCallback((value: Dayjs | null, name: string) => {
+    setAddonData((prevData) => ({
+      ...prevData,
+      [name]: value && value.isValid() ? value.toISOString() : '',
+    }))
+  }, [])
+
   const handleSave = async () => {
     if (
       Object.keys(addonData).some(
@@ -48,15 +56,19 @@ const AddonSavePage = () => {
     const itemName = createItemName(String(addonData.nameSrb), String(addonData.nameEng))
 
     try {
-      const payload = {
-        ...addonData,
+      const payload: SaveAddon = {
         name: itemName,
+        identifier: addonData.identifier,
+        description: addonData.description,
+        price: addonData.price,
+        validFrom: addonData.validFrom,
+        validTo: addonData.validTo,
       } as SaveAddon
 
       const response = await createAddon(payload).unwrap()
       const messageCode = `addons:${response.message}`
       dispatch(setNotification({ text: t(messageCode), type: NotificationType.Success }))
-      navigate('/index/addons')
+      navigate('/addons')
     } catch (err) {
       const errorResponse = err as { data: ApiException }
       const errorCode = `addons:${errorResponse.data}` || 'general:unknownError'
@@ -74,7 +86,15 @@ const AddonSavePage = () => {
       <Grid container item direction='column' spacing={2} sx={{ width: '80%' }}>
         {labels.map((label) => {
           const gridFieldData = addonGridData[label.key]
-          return <GridField key={label.key} gridFieldData={gridFieldData} label={label} handleChange={handleChange} />
+          return (
+            <GridField
+              key={label.key}
+              gridFieldData={gridFieldData}
+              label={label}
+              handleChange={handleChange}
+              handleChangeDateTimePicker={handleChangeDateTimePicker}
+            />
+          )
         })}
         <Grid item sx={{ width: '100%' }}>
           <Button variant='contained' sx={{ width: '100%' }} onClick={handleSave}>

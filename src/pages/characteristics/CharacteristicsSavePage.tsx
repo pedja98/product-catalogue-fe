@@ -51,7 +51,12 @@ const CharacteristicsSavePage = () => {
     }
 
     const itemName = createItemName(String(charData.nameSrb), String(charData.nameEng))
-    const saveCharData = { ...charData, name: itemName } as SaveCharacteristic
+    const saveCharData: SaveCharacteristic = {
+      name: itemName,
+      description: charData.description,
+      identifier: charData.identifier,
+      value: charData.value,
+    } as SaveCharacteristic
     try {
       const response = await createCharacteristic(saveCharData).unwrap()
       const messageCode = `companies:${response.message}`
@@ -61,7 +66,7 @@ const CharacteristicsSavePage = () => {
           type: NotificationType.Success,
         }),
       )
-      navigate(`/index/characteristics`)
+      navigate(`/characteristics`)
     } catch (err) {
       const errorResponse = err as { data: ApiException }
       const errorCode = `companies:${errorResponse.data}` || 'general:unknownError'

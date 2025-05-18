@@ -1,6 +1,8 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { ModuleFederationPlugin } = require('webpack').container
+const webpack = require('webpack')
 const path = require('path')
+require('dotenv').config()
 
 module.exports = {
   entry: './src/index.tsx',
@@ -37,9 +39,6 @@ module.exports = {
       },
     ],
   },
-  output: {
-    publicPath: 'http://localhost:3001/',
-  },
   plugins: [
     new ModuleFederationPlugin({
       name: 'catalogue',
@@ -51,6 +50,10 @@ module.exports = {
         react: { singleton: true, requiredVersion: '^18.0.0' },
         'react-dom': { singleton: true, requiredVersion: '^18.0.0' },
       },
+    }),
+    new webpack.DefinePlugin({
+      'process.env.REACT_APP_PC_API': JSON.stringify(process.env.REACT_APP_PC_API),
+      'process.env.REACT_APP_PC_FE': JSON.stringify(process.env.REACT_APP_PC_FE),
     }),
   ],
 }
