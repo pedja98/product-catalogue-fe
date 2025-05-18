@@ -1,8 +1,9 @@
-import { SaveCharacteristic } from '../types/characteristics'
+import { SaveCharacteristicFormProps } from '../types/characteristics'
 
-export const SaveCharFormInitialState: Partial<SaveCharacteristic> = {
-  name: undefined,
-  description: undefined,
-  identifire: undefined,
-  value: undefined,
+export const SaveCharFormInitialState: Partial<SaveCharacteristicFormProps> = {
+  nameSrb: '',
+  nameEng: '',
+  description: '',
+  identifier: '',
+  value: '',
 }

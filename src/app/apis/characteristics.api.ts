@@ -1,5 +1,5 @@
 import { PcApiTags } from '../../consts/common'
-import { Characteristic } from '../../types/characteristics'
+import { Characteristic, SaveCharacteristic } from '../../types/characteristics'
 import { pcApi } from './core/pc.api'
 
 export const characteristicApi = pcApi.injectEndpoints({
@@ -12,7 +12,7 @@ export const characteristicApi = pcApi.injectEndpoints({
       query: (identifier) => `/characteristics/${identifier}`,
       providesTags: (result, error, id) => [{ type: PcApiTags.CHARACTERISTICS, id }],
     }),
-    createCharacteristic: builder.mutation<{ message: string }, Partial<Characteristic>>({
+    createCharacteristic: builder.mutation<{ message: string }, Partial<SaveCharacteristic>>({
       query: (characteristic) => ({
         url: '/characteristics',
         method: 'POST',

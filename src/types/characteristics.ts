@@ -1,13 +1,23 @@
+import { ItemName } from './common'
+
+export interface SaveCharacteristicFormProps {
+  nameSrb: string
+  nameEng: string
+  identifier: string
+  value: string
+  description: string
+}
+
 export interface SaveCharacteristic {
-  name: string
-  identifire: string
+  name: ItemName
+  identifier: string
   value: string
   description: string
 }
 
 export interface Characteristic {
   id?: string
-  name: Record<string, string>
+  name: ItemName
   identifier: string
   value: string
   description?: string

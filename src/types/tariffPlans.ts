@@ -1,6 +1,8 @@
+import { ItemName } from './common'
+
 export interface TariffPlan {
   id?: string
-  name: Record<string, string>
+  name: ItemName
   identifier: string
   description?: string
   price: number

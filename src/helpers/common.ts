@@ -1,5 +1,6 @@
 import Cookies from 'js-cookie'
 import { AuthState } from '../types/auth'
+import { ItemName } from '../types/common'
 
 export const getRoutePrefixFromCodeString = (prefixText: string): string => {
   return prefixText
@@ -11,4 +12,11 @@ export const getRoutePrefixFromCodeString = (prefixText: string): string => {
 export const getCurrentUser = (): AuthState | undefined => {
   const cookie = Cookies.get('currentUser')
   return cookie ? (JSON.parse(cookie) as AuthState) : undefined
+}
+
+export const createItemName = (name: string, nameEng: string): ItemName => {
+  return {
+    sr: name,
+    en: nameEng,
+  } as ItemName
 }

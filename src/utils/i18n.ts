@@ -12,9 +12,9 @@ i18n
     fallbackLng: Language.SR.toLowerCase(),
     debug: false,
     backend: {
-      loadPath: 'http://localhost:3001/locales/{{lng}}/{{ns}}.json',
+      loadPath: `${process.env.REACT_APP_PC_FE}/locales/{{lng}}/{{ns}}.json`,
     },
-    ns: ['general', 'characteristics'],
+    ns: ['general', 'characteristics', 'addons'],
     defaultNS: 'general',
     interpolation: {
       escapeValue: false,

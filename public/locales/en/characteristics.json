@@ -1,8 +1,6 @@
 {
-  "title": "Charachteristics",
+  "title": "Characteristics",
   "createCharLabel": "Create characteristic",
-  "name": "Name",
-  "identifire": "Identifire",
   "value": "Value",
-  "description": "Description"
+  "charCreated": "Characteristic is successfully created"
 }

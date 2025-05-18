@@ -1,5 +1,6 @@
 {
   "title": "PRODUCT CATALOGUE",
+  "fillAllRequiredFields": "Fill all required fields",
   "pageNotFound": "Page not found",
   "backToPreviousPage": "Back to previous page",
   "saveButtonLabel": "Save",
@@ -8,5 +9,10 @@
     "characteristics": "Characteristics",
     "tariffPlans": "Tariff Plans",
     "addons": "Addons"
-  }
+  },
+  "nameSrb": "Name on serbian",
+  "nameEng": "Name on english",
+  "identifier": "Identifier",
+  "description": "Description",
+  "unknownError": "Unknown error"
 }

@@ -1,6 +1,6 @@
 import { pcApi } from './core/pc.api'
 import { PcApiTags } from '../../consts/common'
-import { Addon } from '../../types/addons'
+import { Addon, SaveAddon } from '../../types/addons'
 
 export const addonApi = pcApi.injectEndpoints({
   endpoints: (builder) => ({
@@ -12,7 +12,7 @@ export const addonApi = pcApi.injectEndpoints({
       query: (id) => `/addons/${id}`,
       providesTags: (result, error, id) => [{ type: PcApiTags.ADDONS, id }],
     }),
-    createAddon: builder.mutation<{ message: string }, Partial<Addon>>({
+    createAddon: builder.mutation<{ message: string }, Partial<SaveAddon>>({
       query: (addon) => ({
         url: '/addons',
         method: 'POST',

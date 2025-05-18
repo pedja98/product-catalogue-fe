@@ -127,6 +127,7 @@ const GridField = (props: GridFieldProps) => {
                 fullWidth: true,
                 required: !!gridFieldData.required,
                 id: label.key,
+                variant: 'standard',
               },
               digitalClockItem: {},
             }}

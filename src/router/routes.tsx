@@ -7,6 +7,8 @@ import CharacteristicsPage from '../pages/characteristics/CharacteristicsPage'
 import NotFoundPage from '../pages/NotFoundPage'
 import CharacteristicsSavePage from '../pages/characteristics/CharacteristicsSavePage'
 import CharacteristicsIndexPage from '../pages/characteristics/CharacteristicsIndexPage'
+import AddonIndexPage from '../pages/addons/AddonIndexPage'
+import AddonSavePage from '../pages/addons/AddonSavePage'
 
 const Routes = () => {
   const routes = useRoutes([
@@ -16,7 +18,14 @@ const Routes = () => {
       children: [
         { path: '', index: true, element: <HomePage /> },
         { path: 'home', element: <Navigate to='/' replace /> },
-        { path: 'addons', element: <AddonsPage /> },
+        {
+          path: 'addons',
+          element: <AddonsPage />,
+          children: [
+            { index: true, element: <AddonIndexPage /> },
+            { path: 'create', element: <AddonSavePage /> },
+          ],
+        },
         { path: 'tariff-plans', element: <TariffPlansPage /> },
         {
           path: 'characteristics',

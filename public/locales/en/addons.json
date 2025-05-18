@@ -1,0 +1,8 @@
+{
+  "price": "Price",
+  "validFrom": "Valid from",
+  "validTo": "Valid to",
+  "createAddonLabel": "Create addon",
+  "addonCreated": "Addon is successfully created",
+  "title": "Addons"
+}

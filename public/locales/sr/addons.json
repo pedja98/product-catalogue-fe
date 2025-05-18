@@ -1,0 +1,8 @@
+{
+  "price": "Cena",
+  "validFrom": "Validan od",
+  "validTo": "Validan do",
+  "createAddonLabel": "Kreiraj dodatak",
+  "addonCreated": "Dodatak je uspešno kreiran",
+  "title": "Dodaci"
+}

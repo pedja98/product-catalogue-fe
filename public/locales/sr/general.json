@@ -1,5 +1,6 @@
 {
   "title": "PRODUKT KATALOG",
+  "fillAllRequiredFields": "Popunite sva neophodna polja",
   "pageNotFound": "Stranica nije pronadjena",
   "backToPreviousPage": "Vratite se na predhodnu stranicu",
   "saveButtonLabel": "Sačuvaj",
@@ -8,5 +9,10 @@
     "characteristics": "Karakteristike",
     "tariffPlans": "Tarifni planovi",
     "addons": "Dodaci"
-  }
+  },
+  "nameSrb": "Ime na srpskom",
+  "nameEng": "Ime na engleskom",
+  "identifier": "Identifikator",
+  "description": "Opis",
+  "unknownError": "Nepoznata greška"
 }

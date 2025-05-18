@@ -57,3 +57,14 @@ export type AutocompleteHashMap = {
 export interface PageElement {
   [key: string]: GridFieldAttributes
 }
+
+export interface ApiException {
+  status: number
+  message: string
+  error: string
+}
+
+export interface ItemName {
+  sr: string
+  en: string
+}
