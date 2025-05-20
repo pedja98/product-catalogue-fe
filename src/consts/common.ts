@@ -45,3 +45,5 @@ export const PcApiTags = {
   TARIFF_PLAN_CHARACTERISTICS: 'TariffPlanCharacteristics',
   TARIFF_PLAN_DISCOUNTS: 'TariffPlanDiscounts',
 }
+
+export const TableRowPerPage = 10

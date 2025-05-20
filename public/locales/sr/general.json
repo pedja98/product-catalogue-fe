@@ -14,5 +14,9 @@
   "nameEng": "Ime na engleskom",
   "identifier": "Identifikator",
   "description": "Opis",
-  "unknownError": "Nepoznata greška"
+  "unknownError": "Nepoznata greška",
+  "createdBy": "Kreirao",
+  "modifiedBy": "Izmenio",
+  "dateCreated": "Datum kreiranja",
+  "dateModified": "Datum izmene"
 }

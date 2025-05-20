@@ -1,5 +1,7 @@
 import styled from '@emotion/styled'
 import { Button, CircularProgress } from '@mui/material'
+import { SecondaryThemeColor } from '../consts/common'
+import { Link } from 'react-router-dom'
 
 export const CenteredCircularProgress = styled(CircularProgress)({
   width: '80px !important',
@@ -17,4 +19,13 @@ export const ButtonStyled = styled(Button)(() => ({
   padding: '10',
   minWidth: 250,
   height: 35,
+}))
+
+export const TableLinkStyled = styled(Link)(() => ({
+  color: 'black',
+  textDecoration: 'none',
+  fontSize: '1rem !important',
+  '&:hover': {
+    color: SecondaryThemeColor,
+  },
 }))

@@ -14,5 +14,9 @@
   "nameEng": "Name on english",
   "identifier": "Identifier",
   "description": "Description",
-  "unknownError": "Unknown error"
+  "unknownError": "Unknown error",
+  "createdBy": "Created by",
+  "modifiedBy": "Modified by",
+  "dateCreated": "Date created",
+  "dateModified": "Date modified"
 }

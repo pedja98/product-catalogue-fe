@@ -68,3 +68,9 @@ export interface ItemName {
   sr: string
   en: string
 }
+
+export interface TableProps {
+  columns: GridLabel[]
+  rows: PageElement[]
+  rowPerPage: number
+}
