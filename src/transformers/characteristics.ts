@@ -2,6 +2,7 @@ import { TFunction } from 'i18next'
 import { GridLabel, PageElement } from '../types/common'
 import { GridFieldTypes } from '../consts/common'
 import { Characteristic, SaveCharacteristicFormProps } from '../types/characteristics'
+import { dateFormatter } from '../helpers/common'
 
 export const getCharacteristicsSaveLabels = (t: TFunction): GridLabel[] => [
   { label: t('nameSrb'), key: 'nameSrb' },
@@ -20,9 +21,9 @@ export const getSaveCharacteristicGridData = (charData: Partial<SaveCharacterist
 })
 
 export const getCharacteristicsTableColumnsLabels = (t: TFunction): GridLabel[] => [
+  { label: t('identifier'), key: 'identifier' },
   { label: t('nameSrb'), key: 'nameSrb' },
   { label: t('nameEng'), key: 'nameEng' },
-  { label: t('identifier'), key: 'identifier' },
   { label: t('characteristics:value'), key: 'value' },
   { label: t('general:createdBy'), key: 'createdByUser' },
   { label: t('general:modifiedBy'), key: 'modifiedByUser' },
@@ -41,6 +42,6 @@ export const transformTableCharacteristicGridData = (charData: Partial<Character
   value: { type: GridFieldTypes.STRING, value: charData.value },
   createdByUser: { type: GridFieldTypes.STRING, value: charData.createdByUser },
   modifiedByUser: { type: GridFieldTypes.STRING, value: charData.modifiedByUser },
-  dateCreated: { type: GridFieldTypes.STRING, value: charData.dateCreated },
-  dateModified: { type: GridFieldTypes.STRING, value: charData.dateModified },
+  dateCreated: { type: GridFieldTypes.STRING, value: dateFormatter(charData.dateCreated) },
+  dateModified: { type: GridFieldTypes.STRING, value: dateFormatter(charData.dateModified) },
 })

@@ -20,3 +20,8 @@ export const createItemName = (name: string, nameEng: string): ItemName => {
     en: nameEng,
   } as ItemName
 }
+
+export const dateFormatter = (dateString?: string): string => {
+  const date = new Date(dateString || '')
+  return date.toLocaleString('en-GB', { hour12: false })
+}
