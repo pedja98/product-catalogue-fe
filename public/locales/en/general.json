@@ -18,5 +18,6 @@
   "createdBy": "Created by",
   "modifiedBy": "Modified by",
   "dateCreated": "Date created",
-  "dateModified": "Date modified"
+  "dateModified": "Date modified",
+  "price": "Price (RSD)"
 }

@@ -9,6 +9,8 @@ import CharacteristicsSavePage from '../pages/characteristics/CharacteristicsSav
 import CharacteristicsIndexPage from '../pages/characteristics/CharacteristicsIndexPage'
 import AddonIndexPage from '../pages/addons/AddonIndexPage'
 import AddonSavePage from '../pages/addons/AddonSavePage'
+import TariffPlansIndexPage from '../pages/tariffPlans/TariffPlansIndexPage'
+import TariffPlansSavePage from '../pages/tariffPlans/TariffPlansSavePage'
 
 const Routes = () => {
   const routes = useRoutes([
@@ -26,7 +28,14 @@ const Routes = () => {
             { path: 'create', element: <AddonSavePage /> },
           ],
         },
-        { path: 'tariff-plans', element: <TariffPlansPage /> },
+        {
+          path: 'tariff-plans',
+          element: <TariffPlansPage />,
+          children: [
+            { index: true, element: <TariffPlansIndexPage /> },
+            { path: 'create', element: <TariffPlansSavePage /> },
+          ],
+        },
         {
           path: 'characteristics',
           element: <CharacteristicsPage />,

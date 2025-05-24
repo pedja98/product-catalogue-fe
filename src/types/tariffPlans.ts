@@ -34,3 +34,18 @@ export interface TariffPlanDiscount {
   dateCreated?: string
   dateModified?: string
 }
+
+export interface SaveTariffPlanProps {
+  nameSrb: string
+  nameEng: string
+  identifier: string
+  description?: string
+  price: number
+}
+
+export interface SaveTariffPlan {
+  name: ItemName
+  identifier: string
+  description?: string
+  price: number
+}
