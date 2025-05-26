@@ -1,4 +1,6 @@
 {
   "title": "Tariff plans",
-  "createTpLabel": "Create Tariff Plan"
+  "createTpLabel": "Create Tariff Plan",
+  "tariffPlanCreated": "Tariff Plan is successfully created",
+  "tariffPlanUpdated": "Tariff Plan is successfully updated"
 }

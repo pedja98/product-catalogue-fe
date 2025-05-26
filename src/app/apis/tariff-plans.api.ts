@@ -8,7 +8,7 @@ export const tariffPlanApi = pcApi.injectEndpoints({
       query: () => '/tariff-plans',
       providesTags: [PcApiTags.TARIFF_PLANS],
     }),
-    getTariffPlanById: builder.query<TariffPlan, string>({
+    getTariffPlanByIdentifier: builder.query<TariffPlan, string>({
       query: (id) => `/tariff-plans/${id}`,
       providesTags: (result, error, id) => [{ type: PcApiTags.TARIFF_PLANS, id }],
     }),
@@ -20,13 +20,13 @@ export const tariffPlanApi = pcApi.injectEndpoints({
       }),
       invalidatesTags: [PcApiTags.TARIFF_PLANS],
     }),
-    updateTariffPlan: builder.mutation<{ message: string }, { id: string; tariffPlan: Partial<TariffPlan> }>({
-      query: ({ id, tariffPlan }) => ({
+    updateTariffPlan: builder.mutation<{ message: string }, { identifier: string; tariffPlan: Partial<TariffPlan> }>({
+      query: ({ identifier: id, tariffPlan }) => ({
         url: `/tariff-plans/${id}`,
         method: 'PUT',
         body: tariffPlan,
       }),
-      invalidatesTags: (result, error, { id }) => [{ type: PcApiTags.TARIFF_PLANS, id }],
+      invalidatesTags: (result, error, { identifier }) => [{ type: PcApiTags.TARIFF_PLANS, identifier }],
     }),
   }),
   overrideExisting: false,
@@ -34,7 +34,7 @@ export const tariffPlanApi = pcApi.injectEndpoints({
 
 export const {
   useGetTariffPlansQuery,
-  useGetTariffPlanByIdQuery,
+  useGetTariffPlanByIdentifierQuery,
   useCreateTariffPlanMutation,
   useUpdateTariffPlanMutation,
 } = tariffPlanApi

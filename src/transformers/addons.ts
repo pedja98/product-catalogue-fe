@@ -4,15 +4,24 @@ import { GridFieldTypes } from '../consts/common'
 import { Addon, SaveAddonProps } from '../types/addons'
 import { dateFormatter } from '../helpers/common'
 
-export const getAddonSaveLabels = (t: TFunction): GridLabel[] => [
-  { label: t('nameSrb'), key: 'nameSrb' },
-  { label: t('nameEng'), key: 'nameEng' },
-  { label: t('identifier'), key: 'identifier' },
-  { label: t('description'), key: 'description' },
-  { label: t('addons:price'), key: 'price' },
-  { label: t('addons:validFrom'), key: 'validFrom' },
-  { label: t('addons:validTo'), key: 'validTo' },
-]
+export const getAddonSaveLabels = (t: TFunction, includeIdentifier: boolean): GridLabel[] => {
+  const labels: GridLabel[] = []
+
+  if (includeIdentifier) {
+    labels.push({ label: t('identifier'), key: 'identifier' })
+  }
+
+  labels.push(
+    { label: t('nameSrb'), key: 'nameSrb' },
+    { label: t('nameEng'), key: 'nameEng' },
+    { label: t('description'), key: 'description' },
+    { label: t('addons:price'), key: 'price' },
+    { label: t('addons:validFrom'), key: 'validFrom' },
+    { label: t('addons:validTo'), key: 'validTo' },
+  )
+
+  return labels
+}
 
 export const getSaveAddonGridData = (addonData: Partial<SaveAddonProps>): PageElement => ({
   nameSrb: { type: GridFieldTypes.STRING, required: true, value: addonData.nameSrb },
@@ -38,7 +47,7 @@ export const getAddonsTableColumnsLabels = (t: TFunction): GridLabel[] => [
 export const transformTableAddonGridData = (addonData: Partial<Addon>): PageElement => ({
   identifier: {
     value: addonData.identifier,
-    link: `/index/addons/${addonData.identifier}/edit`,
+    link: `/addons/${addonData.identifier}/edit`,
     type: GridFieldTypes.LINK,
   },
   nameSrb: { type: GridFieldTypes.STRING, value: addonData.name?.sr },

@@ -4,13 +4,22 @@ import { GridFieldTypes } from '../consts/common'
 import { Characteristic, SaveCharacteristicFormProps } from '../types/characteristics'
 import { dateFormatter } from '../helpers/common'
 
-export const getCharacteristicsSaveLabels = (t: TFunction): GridLabel[] => [
-  { label: t('nameSrb'), key: 'nameSrb' },
-  { label: t('nameEng'), key: 'nameEng' },
-  { label: t('identifier'), key: 'identifier' },
-  { label: t('characteristics:value'), key: 'value' },
-  { label: t('description'), key: 'description' },
-]
+export const getCharacteristicsSaveLabels = (t: TFunction, includeIdentifier: boolean): GridLabel[] => {
+  const labels: GridLabel[] = []
+
+  if (includeIdentifier) {
+    labels.push({ label: t('identifier'), key: 'identifier' })
+  }
+
+  labels.push(
+    { label: t('nameSrb'), key: 'nameSrb' },
+    { label: t('nameEng'), key: 'nameEng' },
+    { label: t('characteristics:value'), key: 'value' },
+    { label: t('description'), key: 'description' },
+  )
+
+  return labels
+}
 
 export const getSaveCharacteristicGridData = (charData: Partial<SaveCharacteristicFormProps>): PageElement => ({
   nameSrb: { type: GridFieldTypes.STRING, required: true, value: charData.nameSrb },
@@ -34,7 +43,7 @@ export const getCharacteristicsTableColumnsLabels = (t: TFunction): GridLabel[] 
 export const transformTableCharacteristicGridData = (charData: Partial<Characteristic>): PageElement => ({
   identifier: {
     value: charData.identifier,
-    link: `/index/characteristics/${charData.identifier}/edit`,
+    link: `/characteristics/${charData.identifier}/edit`,
     type: GridFieldTypes.LINK,
   },
   nameSrb: { type: GridFieldTypes.STRING, value: charData.name?.sr },

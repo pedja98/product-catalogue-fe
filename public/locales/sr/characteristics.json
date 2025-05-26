@@ -2,5 +2,7 @@
   "title": "Karakteristike",
   "createCharLabel": "Kreiraj karakteristiku",
   "value": "Vrednost",
-  "charCreated": "Karakteristika je uspešno kreirana"
+  "charCreated": "Karakteristika je uspešno kreirana",
+  "editChar": "Izmeni karakteristiku {{charIdentifier}}",
+  "charUpdated": "Karakteristika je uspešno izmenjena"
 }

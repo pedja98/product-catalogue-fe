@@ -2,5 +2,7 @@
   "title": "Characteristics",
   "createCharLabel": "Create characteristic",
   "value": "Value",
-  "charCreated": "Characteristic is successfully created"
+  "charCreated": "Characteristic is successfully created",
+  "editChar": "Edit Characteristic {{charIdentifier}}",
+  "charUpdated": "Characteristic has been updated successfully"
 }

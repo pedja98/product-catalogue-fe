@@ -12,6 +12,8 @@ import { CssBaseline } from '@mui/material'
 import pcTheme from './theme/pcTheme'
 import { Provider } from 'react-redux'
 import { store } from './app/store'
+import { SnackbarProvider } from 'notistack'
+import Notification from './components/Notification'
 
 const CatalogueApp: React.FC<CatalogueAppProps> = (props) => {
   const dispatch = useAppDispatch()
@@ -25,6 +27,9 @@ const CatalogueApp: React.FC<CatalogueAppProps> = (props) => {
     <Provider store={store}>
       <ThemeProvider theme={pcTheme}>
         <CssBaseline />
+        <SnackbarProvider maxSnack={5} autoHideDuration={2000}>
+          <Notification />
+        </SnackbarProvider>
         <HashRouter>
           <Routes />
         </HashRouter>

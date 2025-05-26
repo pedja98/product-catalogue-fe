@@ -20,9 +20,24 @@ export const characteristicApi = pcApi.injectEndpoints({
       }),
       invalidatesTags: [PcApiTags.CHARACTERISTICS],
     }),
+    updateCharacteristic: builder.mutation<
+      { message: string },
+      { identifier: string; char: Partial<SaveCharacteristic> }
+    >({
+      query: ({ identifier, char }) => ({
+        url: `/characteristics/${identifier}`,
+        method: 'PUT',
+        body: char,
+      }),
+      invalidatesTags: [PcApiTags.CHARACTERISTICS],
+    }),
   }),
   overrideExisting: false,
 })
 
-export const { useGetCharacteristicsQuery, useGetCharacteristicByIdentifierQuery, useCreateCharacteristicMutation } =
-  characteristicApi
+export const {
+  useGetCharacteristicsQuery,
+  useGetCharacteristicByIdentifierQuery,
+  useCreateCharacteristicMutation,
+  useUpdateCharacteristicMutation,
+} = characteristicApi

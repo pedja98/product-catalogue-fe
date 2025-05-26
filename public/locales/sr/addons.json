@@ -3,5 +3,6 @@
   "validTo": "Validan do",
   "createAddonLabel": "Kreiraj dodatak",
   "addonCreated": "Dodatak je uspešno kreiran",
-  "title": "Dodaci"
+  "title": "Dodaci",
+  "addonUpdated": "Dodatak je uspešno izmenjen"
 }

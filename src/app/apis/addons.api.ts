@@ -8,9 +8,9 @@ export const addonApi = pcApi.injectEndpoints({
       query: () => '/addons',
       providesTags: [PcApiTags.ADDONS],
     }),
-    getAddonById: builder.query<Addon, string>({
-      query: (id) => `/addons/${id}`,
-      providesTags: (result, error, id) => [{ type: PcApiTags.ADDONS, id }],
+    getAddonByIdentifier: builder.query<Addon, string>({
+      query: (identifier) => `/addons/${identifier}`,
+      providesTags: (result, error, identifier) => [{ type: PcApiTags.ADDONS, identifier }],
     }),
     createAddon: builder.mutation<{ message: string }, Partial<SaveAddon>>({
       query: (addon) => ({
@@ -20,16 +20,17 @@ export const addonApi = pcApi.injectEndpoints({
       }),
       invalidatesTags: [PcApiTags.ADDONS],
     }),
-    updateAddon: builder.mutation<{ message: string }, { id: string; addon: Partial<Addon> }>({
-      query: ({ id, addon }) => ({
-        url: `/addons/${id}`,
+    updateAddon: builder.mutation<{ message: string }, { identifier: string; addon: Partial<Addon> }>({
+      query: ({ identifier, addon }) => ({
+        url: `/addons/${identifier}`,
         method: 'PUT',
         body: addon,
       }),
-      invalidatesTags: (result, error, { id }) => [{ type: PcApiTags.ADDONS, id }],
+      invalidatesTags: (result, error, { identifier }) => [{ type: PcApiTags.ADDONS, identifier }],
     }),
   }),
   overrideExisting: false,
 })
 
-export const { useGetAddonsQuery, useGetAddonByIdQuery, useCreateAddonMutation, useUpdateAddonMutation } = addonApi
+export const { useGetAddonsQuery, useGetAddonByIdentifierQuery, useCreateAddonMutation, useUpdateAddonMutation } =
+  addonApi

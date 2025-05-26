@@ -4,13 +4,22 @@ import { GridFieldTypes } from '../consts/common'
 import { SaveTariffPlanProps, TariffPlan } from '../types/tariffPlans'
 import { dateFormatter } from '../helpers/common'
 
-export const getTariffPlanSaveLabels = (t: TFunction): GridLabel[] => [
-  { label: t('nameSrb'), key: 'nameSrb' },
-  { label: t('nameEng'), key: 'nameEng' },
-  { label: t('identifier'), key: 'identifier' },
-  { label: t('description'), key: 'description' },
-  { label: t('price'), key: 'price' },
-]
+export const getTariffPlanSaveLabels = (t: TFunction, includeIdentifier: boolean): GridLabel[] => {
+  const labels: GridLabel[] = []
+
+  if (includeIdentifier) {
+    labels.push({ label: t('identifier'), key: 'identifier' })
+  }
+
+  labels.push(
+    { label: t('nameSrb'), key: 'nameSrb' },
+    { label: t('nameEng'), key: 'nameEng' },
+    { label: t('description'), key: 'description' },
+    { label: t('price'), key: 'price' },
+  )
+
+  return labels
+}
 
 export const getSaveTariffPlanGridData = (addonData: Partial<SaveTariffPlanProps>): PageElement => ({
   nameSrb: { type: GridFieldTypes.STRING, required: true, value: addonData.nameSrb },
@@ -34,7 +43,7 @@ export const getTariffPlansTableColumnsLabels = (t: TFunction): GridLabel[] => [
 export const transformTableTariffPlanGridData = (tpData: Partial<TariffPlan>): PageElement => ({
   identifier: {
     value: tpData.identifier,
-    link: `/index/tariff-plans/${tpData.identifier}/edit`,
+    link: `/tariff-plans/${tpData.identifier}/edit`,
     type: GridFieldTypes.LINK,
   },
   nameSrb: { type: GridFieldTypes.STRING, value: tpData.name?.sr },

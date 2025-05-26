@@ -3,5 +3,6 @@
   "validTo": "Valid to",
   "createAddonLabel": "Create addon",
   "addonCreated": "Addon is successfully created",
-  "title": "Addons"
+  "title": "Addons",
+  "addonUpdated": "Addon is successfully updated"
 }

@@ -7,8 +7,8 @@ import CharacteristicsPage from '../pages/characteristics/CharacteristicsPage'
 import NotFoundPage from '../pages/NotFoundPage'
 import CharacteristicsSavePage from '../pages/characteristics/CharacteristicsSavePage'
 import CharacteristicsIndexPage from '../pages/characteristics/CharacteristicsIndexPage'
-import AddonIndexPage from '../pages/addons/AddonIndexPage'
-import AddonSavePage from '../pages/addons/AddonSavePage'
+import AddonIndexPage from '../pages/addons/AddonsIndexPage'
+import AddonsSavePage from '../pages/addons/AddonsSavePage'
 import TariffPlansIndexPage from '../pages/tariffPlans/TariffPlansIndexPage'
 import TariffPlansSavePage from '../pages/tariffPlans/TariffPlansSavePage'
 
@@ -25,7 +25,8 @@ const Routes = () => {
           element: <AddonsPage />,
           children: [
             { index: true, element: <AddonIndexPage /> },
-            { path: 'create', element: <AddonSavePage /> },
+            { path: 'create', element: <AddonsSavePage /> },
+            { path: ':identifier/edit', element: <AddonsSavePage /> },
           ],
         },
         {
@@ -34,6 +35,7 @@ const Routes = () => {
           children: [
             { index: true, element: <TariffPlansIndexPage /> },
             { path: 'create', element: <TariffPlansSavePage /> },
+            { path: ':identifier/edit', element: <TariffPlansSavePage /> },
           ],
         },
         {
@@ -42,6 +44,7 @@ const Routes = () => {
           children: [
             { index: true, element: <CharacteristicsIndexPage /> },
             { path: 'create', element: <CharacteristicsSavePage /> },
+            { path: ':identifier/edit', element: <CharacteristicsSavePage /> },
           ],
         },
       ],
