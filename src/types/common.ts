@@ -74,3 +74,12 @@ export interface TableProps {
   rows: PageElement[]
   rowPerPage: number
 }
+
+export interface ExpandableTypographyTableProps {
+  title: string
+  hideActionSection: boolean
+  expandableDialogAction: () => void
+  isLoading: boolean
+  columns: GridLabel[]
+  rows: PageElement[]
+}

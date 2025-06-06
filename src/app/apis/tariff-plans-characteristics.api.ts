@@ -1,11 +1,11 @@
 import { pcApi } from './core/pc.api'
 import { PcApiTags } from '../../consts/common'
-import { TariffPlanCharacteristic } from '../../types/tariffPlans'
+import { TariffPlanCharacteristic, TariffPlanCharacteristicResponse } from '../../types/tariffPlans'
 
 export const tariffPlanCharacteristicApi = pcApi.injectEndpoints({
   endpoints: (builder) => ({
-    getCharacteristicsByTariffPlan: builder.query<TariffPlanCharacteristic[], string>({
-      query: (tariffPlanId) => `/tariff-plan-characteristics/${tariffPlanId}`,
+    getCharacteristicsByTariffPlan: builder.query<TariffPlanCharacteristicResponse, string>({
+      query: (tariffPlanId) => `/tariff-plan-characteristics/tariff-plan/${tariffPlanId}/characteristics`,
       providesTags: (result, error, tariffPlanId) => [
         { type: PcApiTags.TARIFF_PLAN_CHARACTERISTICS, id: tariffPlanId },
       ],

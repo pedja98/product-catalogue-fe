@@ -47,3 +47,5 @@ export const PcApiTags = {
 }
 
 export const TableRowPerPage = 10
+
+export const ExpandableTableRowPerPage = 5
