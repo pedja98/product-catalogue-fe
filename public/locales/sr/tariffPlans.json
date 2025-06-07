@@ -10,5 +10,6 @@
   "tariffPlanCharRelationDeletionText": "Da li ste sigurni da želite da obrišete karakteristiku?",
   "tariffPlanCharacteristicDeleted": "Uspešno ste obrisali karakteristiku",
   "addCharacteristic": "Dodaj karakteristiku",
-  "tariffPlanCharacteristicAdded": "Uspešno je dodata nova karakteristika"
+  "tariffPlanCharacteristicAdded": "Uspešno je dodata nova karakteristika",
+  "charAlreadyExistsAdded": "Karakteristika je već dodata"
 }

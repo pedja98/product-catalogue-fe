@@ -2,7 +2,7 @@ import { FC, useState } from 'react'
 import { useGetCharacteristicsQuery } from '../../app/apis/characteristics.api'
 import Spinner from '../Spinner'
 import { Characteristic } from '../../types/characteristics'
-import { ItemName } from '../../types/common'
+import { ApiException, ItemName } from '../../types/common'
 
 import { FormControl, InputLabel, Select, MenuItem, SelectChangeEvent, Grid, Button } from '@mui/material'
 import { useTranslation } from 'react-i18next'
@@ -13,7 +13,10 @@ import { NotificationType } from '../../types/notification'
 import { useAddTariffPlanCharacteristicMutation } from '../../app/apis/tariff-plans-characteristics.api'
 import { AddTariffPlanCharacteristic } from '../../types/tariffPlans'
 
-const TariffPlanAddCharacteristicDialog: FC<{ tariffPlanId: string }> = ({ tariffPlanId }) => {
+const TariffPlanAddCharacteristicDialog: FC<{ tariffPlanId: string; refetch: () => void }> = ({
+  tariffPlanId,
+  refetch,
+}) => {
   const { isLoading: isGetCharacteristicsLoading, data: chars } = useGetCharacteristicsQuery()
   const [charId, setCharId] = useState('')
   const { t } = useTranslation()
@@ -51,6 +54,7 @@ const TariffPlanAddCharacteristicDialog: FC<{ tariffPlanId: string }> = ({ tarif
         charId,
       } as AddTariffPlanCharacteristic).unwrap()
       const messageCode = `tariffPlans:${response.message}`
+      refetch()
       dispatch(
         setNotification({
           text: t(messageCode),
@@ -58,9 +62,12 @@ const TariffPlanAddCharacteristicDialog: FC<{ tariffPlanId: string }> = ({ tarif
         }),
       )
     } catch (error) {
+      const errorResponse = error as { data: ApiException }
+      const errorCode = `tariffPlans:${errorResponse.data}` || 'general:unknownError'
+
       dispatch(
         setNotification({
-          text: JSON.stringify(error),
+          text: t(errorCode),
           type: NotificationType.Error,
         }),
       )

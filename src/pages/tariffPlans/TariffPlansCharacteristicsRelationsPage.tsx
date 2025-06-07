@@ -22,7 +22,11 @@ const TariffPlansCharacteristicsRelationsPage = () => {
   const params = useParams()
   const tpIdentifier = params.identifier ? String(params.identifier) : ''
 
-  const { data: tariffPlanChar, isLoading: isLoadingGetTpChar } = useGetCharacteristicsByTariffPlanQuery(tpIdentifier)
+  const {
+    data: tariffPlanChar,
+    isLoading: isLoadingGetTpChar,
+    refetch: refetchTariffPlanCharacteristics,
+  } = useGetCharacteristicsByTariffPlanQuery(tpIdentifier)
 
   const [deleteTariffPlanCharacteristic, { isLoading: isDeleteTariffPlanCharacteristicLoading }] =
     useDeleteTariffPlanCharacteristicMutation()
@@ -74,7 +78,10 @@ const TariffPlansCharacteristicsRelationsPage = () => {
       showConfirm({
         confirmationTitle: t('tariffPlans:addCharacteristic').toUpperCase(),
         customConfirmComponentCode: EntityConfirmationDialogOptions.TariffPlanAddCharacteristicDialog,
-        customConfirmComponentAttributes: { tariffPlanId: tariffPlanChar?.tariffPlan.id },
+        customConfirmComponentAttributes: {
+          tariffPlanId: tariffPlanChar?.tariffPlan.id,
+          refetch: refetchTariffPlanCharacteristics,
+        },
       }),
     )
   }

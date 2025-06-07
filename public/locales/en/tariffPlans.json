@@ -10,5 +10,6 @@
   "tariffPlanCharRelationDeletionText": "Are you sure that you want to delete characteristic",
   "tariffPlanCharacteristicDeleted": "Characteristic is deleted successfully",
   "addCharacteristic": "Add characteristic",
-  "tariffPlanCharacteristicAdded": "New characteristic is successfully added"
+  "tariffPlanCharacteristicAdded": "New characteristic is successfully added",
+  "charAlreadyExistsAdded": "Characteristic already added"
 }
