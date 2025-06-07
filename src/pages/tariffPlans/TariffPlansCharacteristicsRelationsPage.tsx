@@ -5,7 +5,7 @@ import {
 } from '../../app/apis/tariff-plans-characteristics.api'
 import { Grid, Typography } from '@mui/material'
 import { getCurrentUserLanguage } from '../../helpers/common'
-import { ItemName } from '../../types/common'
+import { EntityConfirmationDialogOptions, ItemName } from '../../types/common'
 import { useTranslation } from 'react-i18next'
 import ExpandableTable from '../../components/ExpandableTable'
 import {
@@ -70,7 +70,13 @@ const TariffPlansCharacteristicsRelationsPage = () => {
   }
 
   const handleCreateCharacteristicRelation = () => {
-    console.log('l')
+    dispatch(
+      showConfirm({
+        confirmationTitle: t('tariffPlans:addCharacteristic').toUpperCase(),
+        customConfirmComponentCode: EntityConfirmationDialogOptions.TariffPlanAddCharacteristicDialog,
+        customConfirmComponentAttributes: { tariffPlanId: tariffPlanChar?.tariffPlan.id },
+      }),
+    )
   }
 
   const charRelationTableGridData = tariffPlanChar?.characteristics

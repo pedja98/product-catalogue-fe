@@ -1,6 +1,6 @@
 import { pcApi } from './core/pc.api'
 import { PcApiTags } from '../../consts/common'
-import { TariffPlanCharacteristic, TariffPlanCharacteristicResponse } from '../../types/tariffPlans'
+import { AddTariffPlanCharacteristic, TariffPlanCharacteristicResponse } from '../../types/tariffPlans'
 
 export const tariffPlanCharacteristicApi = pcApi.injectEndpoints({
   endpoints: (builder) => ({
@@ -11,7 +11,7 @@ export const tariffPlanCharacteristicApi = pcApi.injectEndpoints({
         { type: PcApiTags.TARIFF_PLAN_CHARACTERISTICS, id: tariffPlanId },
       ],
     }),
-    addTariffPlanCharacteristic: builder.mutation<{ message: string }, Partial<TariffPlanCharacteristic>>({
+    addTariffPlanCharacteristic: builder.mutation<{ message: string }, Partial<AddTariffPlanCharacteristic>>({
       query: (body) => ({
         url: '/tariff-plan-characteristics',
         method: 'POST',

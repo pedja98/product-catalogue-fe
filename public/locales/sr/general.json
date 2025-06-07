@@ -10,6 +10,9 @@
     "tariffPlans": "Tarifni planovi",
     "addons": "Dodaci"
   },
+  "close": "Zatvori",
+  "add": "Dodaj",
+  "create": "Napravi",
   "nameSrb": "Ime na srpskom",
   "nameEng": "Ime na engleskom",
   "identifier": "Identifikator",

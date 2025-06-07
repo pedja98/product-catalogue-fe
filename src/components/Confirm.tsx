@@ -21,7 +21,7 @@ const Confirm: FC = () => {
 
   const customDialogContent = getEntityConfirmationDialog(
     confirm.customConfirmComponentCode as EntityConfirmationDialogOptions,
-    confirm.customConfirmComponentAttributes as Record<string, unknown>,
+    (confirm.customConfirmComponentAttributes || {}) as Record<string, unknown>,
   )
 
   return (

@@ -23,6 +23,11 @@ export interface TariffPlanCharacteristic {
   dateModified?: string
 }
 
+export interface AddTariffPlanCharacteristic {
+  tariffPlanId: string
+  charId: string
+}
+
 export interface TariffPlanDiscount {
   id?: string
   discount: string

@@ -4,8 +4,11 @@
   "tariffPlanCreated": "Tariff Plan is successfully created",
   "tariffPlanUpdated": "Tariff Plan is successfully updated",
   "tariffPlanChars": "Characteristics",
+  "tariffPlanChar": "Characteristic",
   "tariffPlanDiscounts": "Discounts",
   "tariffPlanRelations": "Relations",
   "tariffPlanCharRelationDeletionText": "Are you sure that you want to delete characteristic",
-  "tariffPlanCharacteristicDeleted": "Characteristic is deleted successfully"
+  "tariffPlanCharacteristicDeleted": "Characteristic is deleted successfully",
+  "addCharacteristic": "Add characteristic",
+  "tariffPlanCharacteristicAdded": "New characteristic is successfully added"
 }
