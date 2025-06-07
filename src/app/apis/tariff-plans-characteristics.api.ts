@@ -5,7 +5,8 @@ import { TariffPlanCharacteristic, TariffPlanCharacteristicResponse } from '../.
 export const tariffPlanCharacteristicApi = pcApi.injectEndpoints({
   endpoints: (builder) => ({
     getCharacteristicsByTariffPlan: builder.query<TariffPlanCharacteristicResponse, string>({
-      query: (tariffPlanId) => `/tariff-plan-characteristics/tariff-plan/${tariffPlanId}/characteristics`,
+      query: (tariffPlanIdentifier) =>
+        `/tariff-plan-characteristics/tariff-plan/${tariffPlanIdentifier}/characteristics`,
       providesTags: (result, error, tariffPlanId) => [
         { type: PcApiTags.TARIFF_PLAN_CHARACTERISTICS, id: tariffPlanId },
       ],

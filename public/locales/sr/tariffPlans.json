@@ -2,5 +2,8 @@
   "title": "Tarifni plan",
   "createTpLabel": "Kreiraj tarifni plan",
   "tariffPlanCreated": "Tarifni plan je uspešno kreiran",
-  "tariffPlanUpdated": "Tarifni plan je uspešno izmenjen"
+  "tariffPlanUpdated": "Tarifni plan je uspešno izmenjen",
+  "tariffPlanChars": "Karakteristike",
+  "tariffPlanDiscounts": "Popusti",
+  "tariffPlanRelations": "Relacije"
 }

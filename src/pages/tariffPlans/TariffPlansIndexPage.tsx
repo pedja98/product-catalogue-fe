@@ -19,7 +19,7 @@ const TariffPlansIndexPage = () => {
   }
 
   const listPageTariffPlanGridData =
-    tariffPlans?.map((tariffPlan) => transformTableTariffPlanGridData(tariffPlan)) || []
+    tariffPlans?.map((tariffPlan) => transformTableTariffPlanGridData(tariffPlan, t)) || []
 
   const columns = getTariffPlansTableColumnsLabels(t)
 

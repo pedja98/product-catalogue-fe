@@ -54,6 +54,7 @@ const CustomTable: FC<TableProps> = ({ columns, rows, rowPerPage }) => {
                   return (
                     <TableCell key={col.key}>
                       <Button
+                        variant='contained'
                         sx={{ minWidth: '50px', width: '100px' }}
                         onClick={() => {
                           if (gridFieldData.handleClick) {

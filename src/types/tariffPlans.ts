@@ -51,35 +51,21 @@ export interface SaveTariffPlan {
 }
 
 export interface TariffPlanCharacteristicResponse {
-  id: string
   tariffPlan: TariffPlanCharacteristicTariffPlan
   characteristics: TariffPlanCharacteristicChar[]
 }
 
 export interface TariffPlanCharacteristicTariffPlan {
   id: string
-  name: {
-    en: string
-    sr: string
-  }
+  name: ItemName
   identifier: string
-  description: string
-  price: number
-  createdByUser: string
-  modifiedByUser?: string
-  dateCreated: string
-  dateModified: string
 }
 
 export interface TariffPlanCharacteristicChar {
-  id: string
-  name: {
-    en: string
-    sr: string
-  }
+  charId: string
+  relationId: string
+  name: ItemName
   identifier: string
   createdByUser: string
-  modifiedByUser?: string
   dateCreated: string
-  dateModified: string
 }

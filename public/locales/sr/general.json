@@ -19,5 +19,6 @@
   "modifiedBy": "Izmenio",
   "dateCreated": "Datum kreiranja",
   "dateModified": "Datum izmene",
-  "price": "Cena (RSD)"
+  "price": "Cena (RSD)",
+  "delete": "Obriši"
 }

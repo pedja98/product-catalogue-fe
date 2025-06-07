@@ -76,6 +76,7 @@ export interface TableProps {
 }
 
 export interface ExpandableTypographyTableProps {
+  expanded: boolean
   title: string
   hideActionSection: boolean
   expandableDialogAction: () => void

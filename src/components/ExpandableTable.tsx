@@ -8,8 +8,17 @@ import Spinner from './Spinner'
 import CustomTable from './CustomTable'
 
 const ExpandableTable = (props: ExpandableTypographyTableProps) => {
-  const [expanded, setExpanded] = useState(false)
-  const { title, hideActionSection, expandableDialogAction, isLoading, columns, rows } = props
+  const {
+    title,
+    hideActionSection,
+    expandableDialogAction,
+    isLoading,
+    columns,
+    rows,
+    expanded: expandedInitialValue,
+  } = props
+  const [expanded, setExpanded] = useState(expandedInitialValue)
+
   const { t } = useTranslation()
 
   const toggleExpand = () => {
@@ -50,6 +59,7 @@ const ExpandableTable = (props: ExpandableTypographyTableProps) => {
             {!hideActionSection && (
               <Grid sx={{ width: '100%', backgroundColor: WhiteTeamColor, mt: 0.5, pr: 0.5 }}>
                 <Button
+                  variant='contained'
                   id='extended-table-create-action-btn'
                   sx={{ float: 'right', mb: 1 }}
                   onClick={handleActionButtonClick}
