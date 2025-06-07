@@ -28,6 +28,13 @@ export interface AddTariffPlanCharacteristic {
   charId: string
 }
 
+export interface SaveTariffPlanDiscount {
+  discount: string
+  minAmountOfTariffPlans: number
+  maxAmountOfTariffPlans: number
+  tariffPlanIdentifier: string
+}
+
 export interface TariffPlanDiscount {
   id?: string
   discount: string
@@ -38,6 +45,11 @@ export interface TariffPlanDiscount {
   modifiedByUser?: string
   dateCreated?: string
   dateModified?: string
+}
+
+export interface TariffPlanDiscountResponse {
+  tariffPlan: TariffPlanRelationship
+  discount: TariffPlanDiscount[]
 }
 
 export interface SaveTariffPlanProps {
@@ -56,11 +68,11 @@ export interface SaveTariffPlan {
 }
 
 export interface TariffPlanCharacteristicResponse {
-  tariffPlan: TariffPlanCharacteristicTariffPlan
+  tariffPlan: TariffPlanRelationship
   characteristics: TariffPlanCharacteristicChar[]
 }
 
-export interface TariffPlanCharacteristicTariffPlan {
+export interface TariffPlanRelationship {
   id: string
   name: ItemName
   identifier: string
