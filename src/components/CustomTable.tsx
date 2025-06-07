@@ -58,7 +58,7 @@ const CustomTable: FC<TableProps> = ({ columns, rows, rowPerPage }) => {
                         sx={{ minWidth: '50px', width: '100px' }}
                         onClick={() => {
                           if (gridFieldData.handleClick) {
-                            gridFieldData.handleClick(gridFieldData.id as number)
+                            gridFieldData.handleClick(gridFieldData.id as string)
                           }
                         }}
                       >

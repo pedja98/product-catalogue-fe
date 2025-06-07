@@ -20,5 +20,10 @@
   "dateCreated": "Datum kreiranja",
   "dateModified": "Datum izmene",
   "price": "Cena (RSD)",
-  "delete": "Obriši"
+  "delete": "Obriši",
+  "confirmDeletionTitle": "Potvrdite brisanje",
+  "dialogConfirmationButtonLabels": {
+    "yes": "Da",
+    "no": "Ne"
+  }
 }

@@ -40,7 +40,7 @@ export interface GridFieldAttributes<TEnum extends Record<string, string | numbe
   autocompleteMap?: AutocompleteHashMap
   dialogField?: boolean
   disabled?: boolean
-  handleClick?: (id: number) => void
+  handleClick?: (id: string) => void
   multiselectValue?: string[]
   multiselectOptions?: Record<EnumValue<TEnum>, string>
   multiselectOptionValues?: TEnum
@@ -67,6 +67,11 @@ export interface ApiException {
 export interface ItemName {
   sr: string
   en: string
+}
+
+export enum EntityConfirmationDialogOptions {
+  TariffPlanAddCharacteristicDialog = 'TariffPlanAddCharacteristicDialog',
+  TariffPlanAddDiscountDialog = 'TariffPlanAddDiscountDialog',
 }
 
 export interface TableProps {

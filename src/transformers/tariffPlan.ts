@@ -72,7 +72,7 @@ export const getTariffPlanCharacteristicsTableColumnsLabels = (t: TFunction): Gr
 
 export const transformTableTariffPlanCharacteristicGridData = (
   charData: Partial<TariffPlanCharacteristicChar>,
-  handleRelationDelete: (id: number) => void,
+  handleRelationDelete: (id: string) => void,
 ): PageElement => ({
   identifier: {
     value: charData.identifier,

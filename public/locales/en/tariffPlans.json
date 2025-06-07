@@ -5,5 +5,7 @@
   "tariffPlanUpdated": "Tariff Plan is successfully updated",
   "tariffPlanChars": "Characteristics",
   "tariffPlanDiscounts": "Discounts",
-  "tariffPlanRelations": "Relations"
+  "tariffPlanRelations": "Relations",
+  "tariffPlanCharRelationDeletionText": "Are you sure that you want to delete characteristic",
+  "tariffPlanCharacteristicDeleted": "Characteristic is deleted successfully"
 }

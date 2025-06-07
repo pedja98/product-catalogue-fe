@@ -20,5 +20,10 @@
   "dateCreated": "Date created",
   "dateModified": "Date modified",
   "price": "Price (RSD)",
-  "delete": "Delete"
+  "delete": "Delete",
+  "confirmDeletionTitle": "Confirm deletion",
+  "dialogConfirmationButtonLabels": {
+    "yes": "Yes",
+    "no": "No"
+  }
 }

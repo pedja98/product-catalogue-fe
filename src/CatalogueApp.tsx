@@ -14,6 +14,7 @@ import { Provider } from 'react-redux'
 import { store } from './app/store'
 import { SnackbarProvider } from 'notistack'
 import Notification from './components/Notification'
+import Confirm from './components/Confirm'
 
 const CatalogueApp: React.FC<CatalogueAppProps> = (props) => {
   const dispatch = useAppDispatch()
@@ -30,6 +31,7 @@ const CatalogueApp: React.FC<CatalogueAppProps> = (props) => {
         <SnackbarProvider maxSnack={5} autoHideDuration={2000}>
           <Notification />
         </SnackbarProvider>
+        <Confirm />
         <HashRouter>
           <Routes />
         </HashRouter>

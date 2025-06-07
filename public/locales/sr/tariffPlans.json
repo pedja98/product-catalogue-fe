@@ -5,5 +5,7 @@
   "tariffPlanUpdated": "Tarifni plan je uspešno izmenjen",
   "tariffPlanChars": "Karakteristike",
   "tariffPlanDiscounts": "Popusti",
-  "tariffPlanRelations": "Relacije"
+  "tariffPlanRelations": "Relacije",
+  "tariffPlanCharRelationDeletionText": "Da li ste sigurni da želite da obrišete karakteristiku?",
+  "tariffPlanCharacteristicDeleted": "Uspešno ste obrisali karakteristiku"
 }
