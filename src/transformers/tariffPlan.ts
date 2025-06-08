@@ -1,7 +1,13 @@
 import { TFunction } from 'i18next'
 import { GridLabel, PageElement } from '../types/common'
 import { GridFieldTypes } from '../consts/common'
-import { SaveTariffPlanProps, TariffPlan, TariffPlanCharacteristicChar } from '../types/tariffPlans'
+import {
+  SaveTariffPlanDiscount,
+  SaveTariffPlanProps,
+  TariffPlan,
+  TariffPlanCharacteristicChar,
+  TariffPlanDiscount,
+} from '../types/tariffPlans'
 import { dateFormatter } from '../helpers/common'
 
 export const getTariffPlanSaveLabels = (t: TFunction, includeIdentifier: boolean): GridLabel[] => {
@@ -84,4 +90,41 @@ export const transformTableTariffPlanCharacteristicGridData = (
   createdByUser: { type: GridFieldTypes.STRING, value: charData.createdByUser },
   dateCreated: { type: GridFieldTypes.STRING, value: dateFormatter(charData.dateCreated) },
   delete: { type: GridFieldTypes.BUTTON, handleClick: handleRelationDelete, id: charData.relationId },
+})
+
+export const getTariffPlanDiscountsTableColumnsLabels = (t: TFunction): GridLabel[] => [
+  { label: t('tariffPlans:discount'), key: 'discount' },
+  { label: t('tariffPlans:minAmountOfTariffPlans'), key: 'minAmountOfTariffPlans' },
+  { label: t('tariffPlans:maxAmountOfTariffPlans'), key: 'maxAmountOfTariffPlans' },
+  { label: t('general:createdBy'), key: 'createdByUser' },
+  { label: t('general:dateCreated'), key: 'dateCreated' },
+  { label: t('general:modifiedBy'), key: 'modifiedByUser' },
+  { label: t('general:dateModified'), key: 'dateModified' },
+  { label: t('general:delete'), key: 'delete' },
+]
+
+export const transformTableTariffPlanDiscountGridData = (
+  discountData: TariffPlanDiscount,
+  handleRelationDelete: (id: string) => void,
+): PageElement => ({
+  discount: { type: GridFieldTypes.STRING, value: discountData.discount },
+  minAmountOfTariffPlans: { type: GridFieldTypes.STRING, value: discountData.minAmountOfTariffPlans },
+  maxAmountOfTariffPlans: { type: GridFieldTypes.STRING, value: discountData.maxAmountOfTariffPlans },
+  createdByUser: { type: GridFieldTypes.STRING, value: discountData.createdByUser },
+  dateCreated: { type: GridFieldTypes.STRING, value: dateFormatter(discountData.dateCreated) },
+  modifiedByUser: { type: GridFieldTypes.STRING, value: discountData.modifiedByUser },
+  dateModified: { type: GridFieldTypes.STRING, value: dateFormatter(discountData.dateModified) },
+  delete: { type: GridFieldTypes.BUTTON, handleClick: handleRelationDelete, id: discountData.id },
+})
+
+export const getSaveTariffPlanDiscountLabels = (t: TFunction): GridLabel[] => [
+  { label: t('tariffPlans:discount'), key: 'discount' },
+  { label: t('tariffPlans:minAmountOfTariffPlans'), key: 'minAmountOfTariffPlans' },
+  { label: t('tariffPlans:maxAmountOfTariffPlans'), key: 'maxAmountOfTariffPlans' },
+]
+
+export const getSaveTariffPlanDiscountGridData = (discountData: Partial<SaveTariffPlanDiscount>): PageElement => ({
+  discount: { type: GridFieldTypes.STRING, value: discountData.discount, required: true },
+  minAmountOfTariffPlans: { type: GridFieldTypes.STRING, value: discountData.minAmountOfTariffPlans, required: true },
+  maxAmountOfTariffPlans: { type: GridFieldTypes.STRING, value: discountData.maxAmountOfTariffPlans, required: true },
 })

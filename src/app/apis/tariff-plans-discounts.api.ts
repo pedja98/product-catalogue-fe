@@ -4,8 +4,8 @@ import { SaveTariffPlanDiscount, TariffPlanDiscountResponse } from '../../types/
 
 export const tariffPlanDiscountApi = pcApi.injectEndpoints({
   endpoints: (builder) => ({
-    getTariffPlanDiscountByIdentifier: builder.query<TariffPlanDiscountResponse, string>({
-      query: (identifier) => `/tariff-plan-discounts/${identifier}`,
+    getTariffPlanDiscountsByTariffPlanIdentifier: builder.query<TariffPlanDiscountResponse, string>({
+      query: (identifier) => `/tariff-plan-discounts/tariff-plan/${identifier}/discounts`,
       providesTags: (result, error, id) => [{ type: PcApiTags.TARIFF_PLAN_DISCOUNTS, id }],
     }),
     createTariffPlanDiscount: builder.mutation<{ message: string }, Partial<SaveTariffPlanDiscount>>({
@@ -39,7 +39,7 @@ export const tariffPlanDiscountApi = pcApi.injectEndpoints({
 })
 
 export const {
-  useGetTariffPlanDiscountByIdentifierQuery,
+  useGetTariffPlanDiscountsByTariffPlanIdentifierQuery,
   useCreateTariffPlanDiscountMutation,
   useUpdateTariffPlanDiscountMutation,
   useDeleteTariffPlanDiscountMutation,

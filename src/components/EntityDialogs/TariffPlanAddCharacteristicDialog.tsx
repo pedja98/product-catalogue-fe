@@ -46,6 +46,7 @@ const TariffPlanAddCharacteristicDialog: FC<{ tariffPlanId: string; refetch: () 
   const handleRelationCreate = async () => {
     if (!charId) {
       dispatch(setNotification({ text: t('fillAllRequiredFields'), type: NotificationType.Warning }))
+      return
     }
 
     try {

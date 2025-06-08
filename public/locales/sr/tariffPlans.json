@@ -11,5 +11,14 @@
   "tariffPlanCharacteristicDeleted": "Uspešno ste obrisali karakteristiku",
   "addCharacteristic": "Dodaj karakteristiku",
   "tariffPlanCharacteristicAdded": "Uspešno je dodata nova karakteristika",
-  "charAlreadyExistsAdded": "Karakteristika je već dodata"
+  "charAlreadyExistsAdded": "Karakteristika je već dodata",
+  "discount": "Popust(%)",
+  "minAmountOfTariffPlans": "Minimalna količina tarifnih planova",
+  "maxAmountOfTariffPlans": "Maksimalna količina tarifnih planova",
+  "tariffPlanDiscountRelationDeletionText": "Da li ste sigurni da želite da obrišete popust?",
+  "discountDeleted": "Uspešno ste obrisali popust",
+  "tariffPlanDiscountCreated": "Uspešno je dodat novi popust",
+  "maxTpLowerThenMin": "Minimalna količina je veća od maksimalne",
+  "createDiscount": "Napravi popust",
+  "discountBadValue": "Vrednost popusta može biti od 1 do 100"
 }

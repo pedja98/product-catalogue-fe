@@ -71,7 +71,7 @@ export interface ItemName {
 
 export enum EntityConfirmationDialogOptions {
   TariffPlanAddCharacteristicDialog = 'TariffPlanAddCharacteristicDialog',
-  TariffPlanAddDiscountDialog = 'TariffPlanAddDiscountDialog',
+  TariffPlanSaveDiscountDialog = 'TariffPlanSaveDiscountDialog',
 }
 
 export interface TableProps {

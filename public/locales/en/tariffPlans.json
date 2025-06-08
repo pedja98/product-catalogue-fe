@@ -7,9 +7,18 @@
   "tariffPlanChar": "Characteristic",
   "tariffPlanDiscounts": "Discounts",
   "tariffPlanRelations": "Relations",
-  "tariffPlanCharRelationDeletionText": "Are you sure that you want to delete characteristic",
+  "tariffPlanCharRelationDeletionText": "Are you sure that you want to delete characteristic?",
   "tariffPlanCharacteristicDeleted": "Characteristic is deleted successfully",
   "addCharacteristic": "Add characteristic",
   "tariffPlanCharacteristicAdded": "New characteristic is successfully added",
-  "charAlreadyExistsAdded": "Characteristic already added"
+  "charAlreadyExistsAdded": "Characteristic already added",
+  "discount": "Discount(%)",
+  "minAmountOfTariffPlans": "Min amount of tariff plans",
+  "maxAmountOfTariffPlans": "Max amount of tariff plans",
+  "tariffPlanDiscountRelationDeletionText": "Are you sure that you want to delete discount?",
+  "discountDeleted": "Discount is deleted successfully",
+  "tariffPlanDiscountCreated": "New discount is successfully added",
+  "maxTpLowerThenMin": "Minimal amount is greater than maximal",
+  "createDiscount": "Create discount",
+  "discountBadValue": "The discount value can be from 1 to 100"
 }

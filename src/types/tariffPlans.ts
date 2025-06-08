@@ -29,7 +29,7 @@ export interface AddTariffPlanCharacteristic {
 }
 
 export interface SaveTariffPlanDiscount {
-  discount: string
+  discount: number
   minAmountOfTariffPlans: number
   maxAmountOfTariffPlans: number
   tariffPlanIdentifier: string
@@ -49,7 +49,7 @@ export interface TariffPlanDiscount {
 
 export interface TariffPlanDiscountResponse {
   tariffPlan: TariffPlanRelationship
-  discount: TariffPlanDiscount[]
+  discounts: TariffPlanDiscount[]
 }
 
 export interface SaveTariffPlanProps {

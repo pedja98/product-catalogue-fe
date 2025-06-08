@@ -11,7 +11,7 @@ import AddonIndexPage from '../pages/addons/AddonsIndexPage'
 import AddonsSavePage from '../pages/addons/AddonsSavePage'
 import TariffPlansIndexPage from '../pages/tariffPlans/TariffPlansIndexPage'
 import TariffPlansSavePage from '../pages/tariffPlans/TariffPlansSavePage'
-import TariffPlansCharacteristicsRelationsPage from '../pages/tariffPlans/TariffPlansCharacteristicsRelationsPage'
+import TariffPlansRelationsPage from '../pages/tariffPlans/TariffPlansRelationsPage'
 
 const Routes = () => {
   const routes = useRoutes([
@@ -37,7 +37,7 @@ const Routes = () => {
             { index: true, element: <TariffPlansIndexPage /> },
             { path: 'create', element: <TariffPlansSavePage /> },
             { path: ':identifier/edit', element: <TariffPlansSavePage /> },
-            { path: ':identifier/relations', element: <TariffPlansCharacteristicsRelationsPage /> },
+            { path: ':identifier/relations', element: <TariffPlansRelationsPage /> },
           ],
         },
         {
