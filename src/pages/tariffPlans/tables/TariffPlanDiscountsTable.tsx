@@ -12,17 +12,14 @@ import {
 } from '../../../transformers/tariffPlan'
 import Spinner from '../../../components/Spinner'
 import ExpandableTable from '../../../components/ExpandableTable'
-import { TariffPlanDiscount } from '../../../types/tariffPlans'
+import { TariffPlanDiscountsTableProps } from '../../../types/tariffPlans'
 import { useDeleteTariffPlanDiscountMutation } from '../../../app/apis/tariff-plans-discounts.api'
 
-interface Props {
-  tariffPlanIdentifier: string
-  discounts: TariffPlanDiscount[]
-  refetch: () => void
-  isLoading: boolean
-}
-
-const TariffPlanDiscountsTable: FC<Props> = ({ tariffPlanIdentifier, discounts, refetch, isLoading }) => {
+const TariffPlanDiscountsTable: FC<TariffPlanDiscountsTableProps> = ({
+  tariffPlanIdentifier,
+  discounts,
+  isLoading,
+}) => {
   const { t } = useTranslation()
   const dispatch = useAppDispatch()
 
@@ -47,7 +44,7 @@ const TariffPlanDiscountsTable: FC<Props> = ({ tariffPlanIdentifier, discounts, 
 
   const handleConfirmDiscountRelationDelete = async (id: string) => {
     try {
-      const response = await deleteTariffPlanDiscount(id).unwrap()
+      const response = await deleteTariffPlanDiscount({ id, tariffPlanIdentifier }).unwrap()
       const messageCode = `tariffPlans:${response.message}`
       dispatch(
         setNotification({
@@ -55,7 +52,6 @@ const TariffPlanDiscountsTable: FC<Props> = ({ tariffPlanIdentifier, discounts, 
           type: NotificationType.Success,
         }),
       )
-      refetch()
     } catch (error) {
       dispatch(
         setNotification({
@@ -75,7 +71,6 @@ const TariffPlanDiscountsTable: FC<Props> = ({ tariffPlanIdentifier, discounts, 
         customConfirmComponentCode: EntityConfirmationDialogOptions.TariffPlanSaveDiscountDialog,
         customConfirmComponentAttributes: {
           tariffPlanIdentifier,
-          refetch,
         },
       }),
     )

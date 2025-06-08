@@ -13,17 +13,11 @@ const TariffPlansRelationsPage = () => {
   const tariffPlanIdentifier = params.identifier ? String(params.identifier) : ''
   const { t } = useTranslation()
 
-  const {
-    data: tariffPlanChars,
-    isLoading: isGetCharacteristicsByTariffPlanIdentifierLoading,
-    refetch: refetchCharacteristicsByTariffPlan,
-  } = useGetCharacteristicsByTariffPlanIdentifierQuery(tariffPlanIdentifier)
+  const { data: tariffPlanChars, isLoading: isGetCharacteristicsByTariffPlanIdentifierLoading } =
+    useGetCharacteristicsByTariffPlanIdentifierQuery(tariffPlanIdentifier)
 
-  const {
-    data: tariffPlanDiscounts,
-    isLoading: isGetTariffPlanDiscountsByTariffPlanIdentifierLoading,
-    refetch: refetchTariffPlanDiscountsByTariffPlanIdentifier,
-  } = useGetTariffPlanDiscountsByTariffPlanIdentifierQuery(tariffPlanIdentifier)
+  const { data: tariffPlanDiscounts, isLoading: isGetTariffPlanDiscountsByTariffPlanIdentifierLoading } =
+    useGetTariffPlanDiscountsByTariffPlanIdentifierQuery(tariffPlanIdentifier)
 
   if (!tariffPlanChars || !tariffPlanDiscounts) return null
 
@@ -41,14 +35,12 @@ const TariffPlansRelationsPage = () => {
         tariffPlanId={tariffPlanChars.tariffPlan.id}
         characteristics={tariffPlanChars.characteristics}
         isLoading={isGetCharacteristicsByTariffPlanIdentifierLoading}
-        refetch={refetchCharacteristicsByTariffPlan}
       />
       <Divider />
       <TariffPlanDiscountsTable
         tariffPlanIdentifier={tariffPlanDiscounts.tariffPlan.identifier}
         discounts={tariffPlanDiscounts.discounts}
         isLoading={isGetTariffPlanDiscountsByTariffPlanIdentifierLoading}
-        refetch={refetchTariffPlanDiscountsByTariffPlanIdentifier}
       />
     </Grid>
   )

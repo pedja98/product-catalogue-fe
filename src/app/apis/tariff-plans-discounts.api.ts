@@ -8,14 +8,18 @@ export const tariffPlanDiscountApi = pcApi.injectEndpoints({
       query: (identifier) => `/tariff-plan-discounts/tariff-plan/${identifier}/discounts`,
       providesTags: (result, error, id) => [{ type: PcApiTags.TARIFF_PLAN_DISCOUNTS, id }],
     }),
+
     createTariffPlanDiscount: builder.mutation<{ message: string }, Partial<SaveTariffPlanDiscount>>({
       query: (body) => ({
         url: '/tariff-plan-discounts',
         method: 'POST',
         body,
       }),
-      invalidatesTags: [PcApiTags.TARIFF_PLAN_DISCOUNTS],
+      invalidatesTags: (result, error, arg) => [
+        { type: PcApiTags.TARIFF_PLAN_DISCOUNTS, id: arg.tariffPlanIdentifier },
+      ],
     }),
+
     updateTariffPlanDiscount: builder.mutation<
       { message: string },
       { id: string; body: Partial<SaveTariffPlanDiscount> }
@@ -25,14 +29,18 @@ export const tariffPlanDiscountApi = pcApi.injectEndpoints({
         method: 'PUT',
         body,
       }),
+      // Optional: You can also invalidate using tariffPlanIdentifier if available
       invalidatesTags: (result, error, { id }) => [{ type: PcApiTags.TARIFF_PLAN_DISCOUNTS, id }],
     }),
-    deleteTariffPlanDiscount: builder.mutation<{ message: string }, string>({
-      query: (id) => ({
+
+    deleteTariffPlanDiscount: builder.mutation<{ message: string }, { id: string; tariffPlanIdentifier: string }>({
+      query: ({ id }) => ({
         url: `/tariff-plan-discounts/${id}`,
         method: 'DELETE',
       }),
-      invalidatesTags: [PcApiTags.TARIFF_PLAN_CHARACTERISTICS],
+      invalidatesTags: (result, error, { tariffPlanIdentifier }) => [
+        { type: PcApiTags.TARIFF_PLAN_DISCOUNTS, id: tariffPlanIdentifier },
+      ],
     }),
   }),
   overrideExisting: false,

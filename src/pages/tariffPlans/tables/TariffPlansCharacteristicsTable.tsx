@@ -13,16 +13,13 @@ import {
 } from '../../../transformers/tariffPlan'
 import Spinner from '../../../components/Spinner'
 import ExpandableTable from '../../../components/ExpandableTable'
-import { TariffPlanCharacteristicChar } from '../../../types/tariffPlans'
+import { TariffPlanCharacteristicsTableProps } from '../../../types/tariffPlans'
 
-interface Props {
-  tariffPlanId: string
-  characteristics: TariffPlanCharacteristicChar[]
-  refetch: () => void
-  isLoading: boolean
-}
-
-const TariffPlanCharacteristicsTable: FC<Props> = ({ tariffPlanId, characteristics, refetch, isLoading }) => {
+const TariffPlanCharacteristicsTable: FC<TariffPlanCharacteristicsTableProps> = ({
+  tariffPlanId,
+  characteristics,
+  isLoading,
+}) => {
   const { t } = useTranslation()
   const dispatch = useAppDispatch()
 
@@ -47,7 +44,7 @@ const TariffPlanCharacteristicsTable: FC<Props> = ({ tariffPlanId, characteristi
 
   const handleConfirmCharRelationDelete = async (id: string) => {
     try {
-      const response = await deleteTariffPlanCharacteristic(id).unwrap()
+      const response = await deleteTariffPlanCharacteristic({ id }).unwrap()
       const messageCode = `tariffPlans:${response.message}`
       dispatch(
         setNotification({
@@ -55,7 +52,6 @@ const TariffPlanCharacteristicsTable: FC<Props> = ({ tariffPlanId, characteristi
           type: NotificationType.Success,
         }),
       )
-      refetch()
     } catch (error) {
       dispatch(
         setNotification({
@@ -75,7 +71,6 @@ const TariffPlanCharacteristicsTable: FC<Props> = ({ tariffPlanId, characteristi
         customConfirmComponentCode: EntityConfirmationDialogOptions.TariffPlanAddCharacteristicDialog,
         customConfirmComponentAttributes: {
           tariffPlanId,
-          refetch,
         },
       }),
     )

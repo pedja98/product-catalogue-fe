@@ -9,15 +9,11 @@ export const getEntityConfirmationDialog = (
 ): ReactNode | undefined => {
   const dialogs: Partial<Record<string, ReactNode>> = {
     [EntityConfirmationDialogOptions.TariffPlanAddCharacteristicDialog]: (
-      <TariffPlanAddCharacteristicDialog
-        tariffPlanId={customConfirmComponentAttributes.tariffPlanId as string}
-        refetch={customConfirmComponentAttributes.refetch as () => void}
-      />
+      <TariffPlanAddCharacteristicDialog tariffPlanId={customConfirmComponentAttributes.tariffPlanId as string} />
     ),
     [EntityConfirmationDialogOptions.TariffPlanSaveDiscountDialog]: (
       <TariffPlanSaveDiscountDialog
         tariffPlanIdentifier={customConfirmComponentAttributes.tariffPlanIdentifier as string}
-        refetch={customConfirmComponentAttributes.refetch as () => void}
       />
     ),
   }

@@ -13,10 +13,7 @@ import { NotificationType } from '../../types/notification'
 import { useAddTariffPlanCharacteristicMutation } from '../../app/apis/tariff-plans-characteristics.api'
 import { AddTariffPlanCharacteristic } from '../../types/tariffPlans'
 
-const TariffPlanAddCharacteristicDialog: FC<{ tariffPlanId: string; refetch: () => void }> = ({
-  tariffPlanId,
-  refetch,
-}) => {
+const TariffPlanAddCharacteristicDialog: FC<{ tariffPlanId: string }> = ({ tariffPlanId }) => {
   const { isLoading: isGetCharacteristicsLoading, data: chars } = useGetCharacteristicsQuery()
   const [charId, setCharId] = useState('')
   const { t } = useTranslation()
@@ -55,7 +52,7 @@ const TariffPlanAddCharacteristicDialog: FC<{ tariffPlanId: string; refetch: () 
         charId,
       } as AddTariffPlanCharacteristic).unwrap()
       const messageCode = `tariffPlans:${response.message}`
-      refetch()
+
       dispatch(
         setNotification({
           text: t(messageCode),

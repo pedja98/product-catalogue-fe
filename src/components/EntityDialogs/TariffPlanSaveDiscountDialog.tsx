@@ -13,10 +13,7 @@ import { useCreateTariffPlanDiscountMutation } from '../../app/apis/tariff-plans
 import Spinner from '../Spinner'
 import { ApiException } from '../../types/common'
 
-const TariffPlanSaveDiscountDialog: FC<{ tariffPlanIdentifier: string; refetch: () => void }> = ({
-  tariffPlanIdentifier,
-  refetch,
-}) => {
+const TariffPlanSaveDiscountDialog: FC<{ tariffPlanIdentifier: string }> = ({ tariffPlanIdentifier }) => {
   const [discountData, setDiscountData] = useState<Partial<SaveTariffPlanDiscount>>({
     ...SaveTariffPlanDiscountInitialState,
     tariffPlanIdentifier,
@@ -63,7 +60,7 @@ const TariffPlanSaveDiscountDialog: FC<{ tariffPlanIdentifier: string; refetch: 
     try {
       const response = await createTariffPlanDiscount(discountData).unwrap()
       const messageCode = `tariffPlans:${response.message}`
-      refetch()
+
       dispatch(
         setNotification({
           text: t(messageCode),

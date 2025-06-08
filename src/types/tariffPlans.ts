@@ -86,3 +86,15 @@ export interface TariffPlanCharacteristicChar {
   createdByUser: string
   dateCreated: string
 }
+
+export interface TariffPlanCharacteristicsTableProps {
+  tariffPlanId: string
+  characteristics: TariffPlanCharacteristicChar[]
+  isLoading: boolean
+}
+
+export interface TariffPlanDiscountsTableProps {
+  tariffPlanIdentifier: string
+  discounts: TariffPlanDiscount[]
+  isLoading: boolean
+}
