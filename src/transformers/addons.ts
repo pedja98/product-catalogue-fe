@@ -37,6 +37,7 @@ export const getAddonsTableColumnsLabels = (t: TFunction): GridLabel[] => [
   { label: t('identifier'), key: 'identifier' },
   { label: t('nameSrb'), key: 'nameSrb' },
   { label: t('nameEng'), key: 'nameEng' },
+  { label: t('status'), key: 'status' },
   { label: t('addons:price'), key: 'price' },
   { label: t('general:createdBy'), key: 'createdByUser' },
   { label: t('general:modifiedBy'), key: 'modifiedByUser' },
@@ -44,7 +45,7 @@ export const getAddonsTableColumnsLabels = (t: TFunction): GridLabel[] => [
   { label: t('general:dateModified'), key: 'dateModified' },
 ]
 
-export const transformTableAddonGridData = (addonData: Partial<Addon>): PageElement => ({
+export const transformTableAddonGridData = (addonData: Partial<Addon>, t: TFunction): PageElement => ({
   identifier: {
     value: addonData.identifier,
     link: `/addons/${addonData.identifier}/edit`,
@@ -52,6 +53,7 @@ export const transformTableAddonGridData = (addonData: Partial<Addon>): PageElem
   },
   nameSrb: { type: GridFieldTypes.STRING, value: addonData.name?.sr },
   nameEng: { type: GridFieldTypes.STRING, value: addonData.name?.en },
+  status: { type: GridFieldTypes.STRING, value: t(`statuses.${addonData.status}`) },
   price: { type: GridFieldTypes.STRING, value: addonData.price },
   createdByUser: { type: GridFieldTypes.STRING, value: addonData.createdByUser },
   modifiedByUser: { type: GridFieldTypes.STRING, value: addonData.modifiedByUser },

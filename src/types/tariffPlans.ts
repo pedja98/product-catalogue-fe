@@ -1,10 +1,11 @@
-import { ItemName } from './common'
+import { ItemName, ItemStatus } from './common'
 
 export interface TariffPlan {
   id?: string
   name: ItemName
   identifier: string
   description?: string
+  status: ItemStatus
   price: number
   createdByUser: string
   modifiedByUser?: string

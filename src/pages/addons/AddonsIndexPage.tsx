@@ -18,7 +18,7 @@ const AddonIndexPage = () => {
     navigate(`${location.pathname}/create`)
   }
 
-  const listPageAddonGridData = addons?.map((addon) => transformTableAddonGridData(addon)) || []
+  const listPageAddonGridData = addons?.map((addon) => transformTableAddonGridData(addon, t)) || []
 
   const columns = getAddonsTableColumnsLabels(t)
 

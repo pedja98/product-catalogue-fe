@@ -22,11 +22,16 @@
   "modifiedBy": "Izmenio",
   "dateCreated": "Datum kreiranja",
   "dateModified": "Datum izmene",
+  "status": "Status",
   "price": "Cena (RSD)",
   "delete": "Obriši",
   "confirmDeletionTitle": "Potvrdite brisanje",
   "dialogConfirmationButtonLabels": {
     "yes": "Da",
     "no": "Ne"
+  },
+  "statuses": {
+    "ACTIVE": "Aktivan",
+    "INACTIVE": "Neaktivan"
   }
 }

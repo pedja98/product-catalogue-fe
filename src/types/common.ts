@@ -17,6 +17,11 @@ export enum ModuleOptions {
   Addons = 'addons',
 }
 
+export enum ItemStatus {
+  ACTIVE = 'ACTIVE',
+  INACTIVE = 'INACTIVE',
+}
+
 export interface GridLabel {
   label: string
   key: string

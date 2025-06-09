@@ -22,11 +22,16 @@
   "modifiedBy": "Modified by",
   "dateCreated": "Date created",
   "dateModified": "Date modified",
+  "status": "Status",
   "price": "Price (RSD)",
   "delete": "Delete",
   "confirmDeletionTitle": "Confirm deletion",
   "dialogConfirmationButtonLabels": {
     "yes": "Yes",
     "no": "No"
+  },
+  "statuses": {
+    "ACTIVE": "Active",
+    "INACTIVE": "Inactive"
   }
 }

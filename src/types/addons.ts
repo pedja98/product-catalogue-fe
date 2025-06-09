@@ -1,4 +1,4 @@
-import { ItemName } from './common'
+import { ItemName, ItemStatus } from './common'
 
 export interface Addon {
   id?: string
@@ -6,6 +6,7 @@ export interface Addon {
   identifier: string
   description?: string
   price: number
+  status: ItemStatus
   validFrom: string
   validTo?: string
   createdByUser: string
