@@ -4,10 +4,10 @@ import { GridFieldTypes } from '../consts/common'
 import { Addon, SaveAddonProps } from '../types/addons'
 import { dateFormatter } from '../helpers/common'
 
-export const getAddonSaveLabels = (t: TFunction, includeIdentifier: boolean): GridLabel[] => {
+export const getAddonSaveLabels = (t: TFunction, isCreateMode: boolean): GridLabel[] => {
   const labels: GridLabel[] = []
 
-  if (includeIdentifier) {
+  if (isCreateMode) {
     labels.push({ label: t('identifier'), key: 'identifier' })
   }
 
@@ -15,15 +15,23 @@ export const getAddonSaveLabels = (t: TFunction, includeIdentifier: boolean): Gr
     { label: t('nameSrb'), key: 'nameSrb' },
     { label: t('nameEng'), key: 'nameEng' },
     { label: t('description'), key: 'description' },
-    { label: t('addons:price'), key: 'price' },
+    { label: t('price'), key: 'price' },
     { label: t('addons:validFrom'), key: 'validFrom' },
     { label: t('addons:validTo'), key: 'validTo' },
   )
 
+  if (!isCreateMode) {
+    labels.push({ label: t('status'), key: 'status' })
+  }
+
   return labels
 }
 
-export const getSaveAddonGridData = (addonData: Partial<SaveAddonProps>): PageElement => ({
+export const getSaveAddonGridData = (
+  addonData: Partial<SaveAddonProps>,
+  itemStatusOptions: string[],
+  itemStatusOptionsValues: (undefined | string)[],
+): PageElement => ({
   nameSrb: { type: GridFieldTypes.STRING, required: true, value: addonData.nameSrb },
   nameEng: { type: GridFieldTypes.STRING, required: true, value: addonData.nameEng },
   identifier: { type: GridFieldTypes.STRING, required: true, value: addonData.identifier },
@@ -31,6 +39,13 @@ export const getSaveAddonGridData = (addonData: Partial<SaveAddonProps>): PageEl
   price: { type: GridFieldTypes.NUMBER, required: true, value: addonData.price },
   validFrom: { type: GridFieldTypes.DATE_TIME, required: true, value: addonData.validFrom },
   validTo: { type: GridFieldTypes.DATE_TIME, required: false, value: addonData.validTo },
+  status: {
+    required: true,
+    type: GridFieldTypes.SELECT,
+    options: itemStatusOptions,
+    optionsValues: itemStatusOptionsValues,
+    value: String(addonData.status),
+  },
 })
 
 export const getAddonsTableColumnsLabels = (t: TFunction): GridLabel[] => [

@@ -6,7 +6,7 @@ export interface Addon {
   identifier: string
   description?: string
   price: number
-  status: ItemStatus
+  status: ItemStatus | null
   validFrom: string
   validTo?: string
   createdByUser: string
@@ -23,6 +23,7 @@ export interface SaveAddonProps {
   price: number
   validFrom: string
   validTo?: string
+  status?: ItemStatus | null
 }
 
 export interface SaveAddon {

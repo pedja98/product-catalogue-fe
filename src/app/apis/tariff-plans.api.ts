@@ -1,6 +1,6 @@
 import { pcApi } from './core/pc.api'
 import { PcApiTags } from '../../consts/common'
-import { TariffPlan } from '../../types/tariffPlans'
+import { SaveTariffPlan, TariffPlan } from '../../types/tariffPlans'
 
 export const tariffPlanApi = pcApi.injectEndpoints({
   endpoints: (builder) => ({
@@ -12,7 +12,7 @@ export const tariffPlanApi = pcApi.injectEndpoints({
       query: (id) => `/tariff-plans/${id}`,
       providesTags: (result, error, id) => [{ type: PcApiTags.TARIFF_PLANS, id }],
     }),
-    createTariffPlan: builder.mutation<{ message: string }, Partial<TariffPlan>>({
+    createTariffPlan: builder.mutation<{ message: string }, SaveTariffPlan>({
       query: (tariffPlan) => ({
         url: '/tariff-plans',
         method: 'POST',
@@ -20,7 +20,7 @@ export const tariffPlanApi = pcApi.injectEndpoints({
       }),
       invalidatesTags: [PcApiTags.TARIFF_PLANS],
     }),
-    updateTariffPlan: builder.mutation<{ message: string }, { identifier: string; tariffPlan: Partial<TariffPlan> }>({
+    updateTariffPlan: builder.mutation<{ message: string }, { identifier: string; tariffPlan: SaveTariffPlan }>({
       query: ({ identifier: id, tariffPlan }) => ({
         url: `/tariff-plans/${id}`,
         method: 'PUT',

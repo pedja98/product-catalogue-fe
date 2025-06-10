@@ -9,7 +9,7 @@ import Spinner from '../../components/Spinner'
 import GridField from '../../components/GridField'
 import { SaveAddon, SaveAddonProps } from '../../types/addons'
 import { createItemName } from '../../helpers/common'
-import { ApiException } from '../../types/common'
+import { ApiException, ItemStatus } from '../../types/common'
 import { useCreateAddonMutation, useUpdateAddonMutation, useGetAddonByIdentifierQuery } from '../../app/apis/addons.api'
 import { getAddonSaveLabels, getSaveAddonGridData } from '../../transformers/addons'
 import { SaveAddonFormInitialState } from '../../consts/addon'
@@ -41,12 +41,15 @@ const AddonsSavePage = () => {
         price: addon.price,
         validFrom: addon.validFrom,
         validTo: addon.validTo,
+        status: addon.status,
       })
     }
   }, [addonIdentifier, addon])
 
+  const itemStatusOptions = Object.keys(ItemStatus).map((status) => t(`statuses.${status}`))
+
   const labels = getAddonSaveLabels(t, !addonIdentifier)
-  const addonGridData = getSaveAddonGridData(addonData)
+  const addonGridData = getSaveAddonGridData(addonData, itemStatusOptions, Object.values(ItemStatus))
 
   const handleChange = useCallback((event: ChangeEvent<HTMLInputElement> | SelectChangeEvent<string | string[]>) => {
     const { name, value } = event.target
@@ -84,6 +87,7 @@ const AddonsSavePage = () => {
       price: addonData.price,
       validFrom: addonData.validFrom,
       validTo: addonData.validTo,
+      status: addonIdentifier ? addonData.status : null,
     } as SaveAddon
 
     try {

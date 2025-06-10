@@ -59,6 +59,7 @@ export interface SaveTariffPlanProps {
   identifier: string
   description?: string
   price: number
+  status?: ItemStatus | null
 }
 
 export interface SaveTariffPlan {
@@ -66,6 +67,7 @@ export interface SaveTariffPlan {
   identifier: string
   description?: string
   price: number
+  status?: ItemStatus | null
 }
 
 export interface TariffPlanCharacteristicResponse {

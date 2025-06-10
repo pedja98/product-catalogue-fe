@@ -10,10 +10,10 @@ import {
 } from '../types/tariffPlans'
 import { dateFormatter } from '../helpers/common'
 
-export const getTariffPlanSaveLabels = (t: TFunction, includeIdentifier: boolean): GridLabel[] => {
+export const getTariffPlanSaveLabels = (t: TFunction, isCreateMode: boolean): GridLabel[] => {
   const labels: GridLabel[] = []
 
-  if (includeIdentifier) {
+  if (isCreateMode) {
     labels.push({ label: t('identifier'), key: 'identifier' })
   }
 
@@ -24,15 +24,30 @@ export const getTariffPlanSaveLabels = (t: TFunction, includeIdentifier: boolean
     { label: t('price'), key: 'price' },
   )
 
+  if (!isCreateMode) {
+    labels.push({ label: t('status'), key: 'status' })
+  }
+
   return labels
 }
 
-export const getSaveTariffPlanGridData = (addonData: Partial<SaveTariffPlanProps>): PageElement => ({
-  nameSrb: { type: GridFieldTypes.STRING, required: true, value: addonData.nameSrb },
-  nameEng: { type: GridFieldTypes.STRING, required: true, value: addonData.nameEng },
-  identifier: { type: GridFieldTypes.STRING, required: true, value: addonData.identifier },
-  description: { type: GridFieldTypes.AREA, required: false, value: addonData.description },
-  price: { type: GridFieldTypes.NUMBER, required: true, value: addonData.price },
+export const getSaveTariffPlanGridData = (
+  tpData: Partial<SaveTariffPlanProps>,
+  itemStatusOptions: string[],
+  itemStatusOptionsValues: (undefined | string)[],
+): PageElement => ({
+  nameSrb: { type: GridFieldTypes.STRING, required: true, value: tpData.nameSrb },
+  nameEng: { type: GridFieldTypes.STRING, required: true, value: tpData.nameEng },
+  identifier: { type: GridFieldTypes.STRING, required: true, value: tpData.identifier },
+  description: { type: GridFieldTypes.AREA, required: false, value: tpData.description },
+  price: { type: GridFieldTypes.NUMBER, required: true, value: tpData.price },
+  status: {
+    required: true,
+    type: GridFieldTypes.SELECT,
+    options: itemStatusOptions,
+    optionsValues: itemStatusOptionsValues,
+    value: String(tpData.status),
+  },
 })
 
 export const getTariffPlansTableColumnsLabels = (t: TFunction): GridLabel[] => [

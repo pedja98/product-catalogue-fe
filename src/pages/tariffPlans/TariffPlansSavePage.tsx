@@ -7,7 +7,7 @@ import { useAppDispatch } from '../../app/hooks'
 import { setNotification } from '../../features/notifications.slice'
 import { NotificationType } from '../../types/notification'
 import { useNavigate, useParams } from 'react-router-dom'
-import { ApiException } from '../../types/common'
+import { ApiException, ItemStatus } from '../../types/common'
 import { createItemName } from '../../helpers/common'
 import {
   useCreateTariffPlanMutation,
@@ -42,12 +42,15 @@ const TariffPlansSavePage = () => {
         description: tariffPlan.description,
         identifier: tariffPlan.identifier,
         price: tariffPlan.price,
+        status: tariffPlan.status,
       })
     }
   }, [tpIdentifier, tariffPlan])
 
+  const itemStatusOptions = Object.keys(ItemStatus).map((status) => t(`statuses.${status}`))
+
   const labels = getTariffPlanSaveLabels(t, !tpIdentifier)
-  const saveTpGridData = getSaveTariffPlanGridData(tpData)
+  const saveTpGridData = getSaveTariffPlanGridData(tpData, itemStatusOptions, Object.values(ItemStatus))
 
   const handleChange = useCallback((event: ChangeEvent<HTMLInputElement> | SelectChangeEvent<string | string[]>) => {
     const { name, value } = event.target
@@ -80,6 +83,7 @@ const TariffPlansSavePage = () => {
       description: tpData.description,
       identifier: tpData.identifier,
       price: tpData.price,
+      status: tpIdentifier ? tpData.status : null,
     } as SaveTariffPlan
     try {
       const response = tpIdentifier
