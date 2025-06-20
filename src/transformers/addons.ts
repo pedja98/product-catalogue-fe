@@ -8,20 +8,20 @@ export const getAddonSaveLabels = (t: TFunction, isCreateMode: boolean): GridLab
   const labels: GridLabel[] = []
 
   if (isCreateMode) {
-    labels.push({ label: t('identifier'), key: 'identifier' })
+    labels.push({ text: t('identifier'), key: 'identifier' })
   }
 
   labels.push(
-    { label: t('nameSrb'), key: 'nameSrb' },
-    { label: t('nameEng'), key: 'nameEng' },
-    { label: t('description'), key: 'description' },
-    { label: t('price'), key: 'price' },
-    { label: t('addons:validFrom'), key: 'validFrom' },
-    { label: t('addons:validTo'), key: 'validTo' },
+    { text: t('nameSrb'), key: 'nameSrb' },
+    { text: t('nameEng'), key: 'nameEng' },
+    { text: t('description'), key: 'description' },
+    { text: t('price'), key: 'price' },
+    { text: t('addons:validFrom'), key: 'validFrom' },
+    { text: t('addons:validTo'), key: 'validTo' },
   )
 
   if (!isCreateMode) {
-    labels.push({ label: t('status'), key: 'status' })
+    labels.push({ text: t('status'), key: 'status' })
   }
 
   return labels
@@ -49,15 +49,15 @@ export const getSaveAddonGridData = (
 })
 
 export const getAddonsTableColumnsLabels = (t: TFunction): GridLabel[] => [
-  { label: t('identifier'), key: 'identifier' },
-  { label: t('nameSrb'), key: 'nameSrb' },
-  { label: t('nameEng'), key: 'nameEng' },
-  { label: t('status'), key: 'status' },
-  { label: t('addons:price'), key: 'price' },
-  { label: t('general:createdBy'), key: 'createdByUser' },
-  { label: t('general:modifiedBy'), key: 'modifiedByUser' },
-  { label: t('general:dateCreated'), key: 'dateCreated' },
-  { label: t('general:dateModified'), key: 'dateModified' },
+  { text: t('identifier'), key: 'identifier' },
+  { text: t('nameSrb'), key: 'nameSrb' },
+  { text: t('nameEng'), key: 'nameEng' },
+  { text: t('status'), key: 'status' },
+  { text: t('addons:price'), key: 'price' },
+  { text: t('general:createdBy'), key: 'createdByUser' },
+  { text: t('general:modifiedBy'), key: 'modifiedByUser' },
+  { text: t('general:dateCreated'), key: 'dateCreated' },
+  { text: t('general:dateModified'), key: 'dateModified' },
 ]
 
 export const transformTableAddonGridData = (addonData: Partial<Addon>, t: TFunction): PageElement => ({

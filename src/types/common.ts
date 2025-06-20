@@ -23,7 +23,7 @@ export enum ItemStatus {
 }
 
 export interface GridLabel {
-  label: string
+  text: string
   key: string
 }
 

@@ -14,18 +14,18 @@ export const getTariffPlanSaveLabels = (t: TFunction, isCreateMode: boolean): Gr
   const labels: GridLabel[] = []
 
   if (isCreateMode) {
-    labels.push({ label: t('identifier'), key: 'identifier' })
+    labels.push({ text: t('identifier'), key: 'identifier' })
   }
 
   labels.push(
-    { label: t('nameSrb'), key: 'nameSrb' },
-    { label: t('nameEng'), key: 'nameEng' },
-    { label: t('description'), key: 'description' },
-    { label: t('price'), key: 'price' },
+    { text: t('nameSrb'), key: 'nameSrb' },
+    { text: t('nameEng'), key: 'nameEng' },
+    { text: t('description'), key: 'description' },
+    { text: t('price'), key: 'price' },
   )
 
   if (!isCreateMode) {
-    labels.push({ label: t('status'), key: 'status' })
+    labels.push({ text: t('status'), key: 'status' })
   }
 
   return labels
@@ -51,16 +51,16 @@ export const getSaveTariffPlanGridData = (
 })
 
 export const getTariffPlansTableColumnsLabels = (t: TFunction): GridLabel[] => [
-  { label: t('identifier'), key: 'identifier' },
-  { label: t('nameSrb'), key: 'nameSrb' },
-  { label: t('nameEng'), key: 'nameEng' },
-  { label: t('price'), key: 'price' },
-  { label: t('status'), key: 'status' },
-  { label: t('tariffPlans:tariffPlanRelations'), key: 'tariffPlanRelations' },
-  { label: t('general:createdBy'), key: 'createdByUser' },
-  { label: t('general:modifiedBy'), key: 'modifiedByUser' },
-  { label: t('general:dateCreated'), key: 'dateCreated' },
-  { label: t('general:dateModified'), key: 'dateModified' },
+  { text: t('identifier'), key: 'identifier' },
+  { text: t('nameSrb'), key: 'nameSrb' },
+  { text: t('nameEng'), key: 'nameEng' },
+  { text: t('price'), key: 'price' },
+  { text: t('status'), key: 'status' },
+  { text: t('tariffPlans:tariffPlanRelations'), key: 'tariffPlanRelations' },
+  { text: t('general:createdBy'), key: 'createdByUser' },
+  { text: t('general:modifiedBy'), key: 'modifiedByUser' },
+  { text: t('general:dateCreated'), key: 'dateCreated' },
+  { text: t('general:dateModified'), key: 'dateModified' },
 ]
 
 export const transformTableTariffPlanGridData = (tpData: Partial<TariffPlan>, t: TFunction): PageElement => ({
@@ -85,12 +85,12 @@ export const transformTableTariffPlanGridData = (tpData: Partial<TariffPlan>, t:
 })
 
 export const getTariffPlanCharacteristicsTableColumnsLabels = (t: TFunction): GridLabel[] => [
-  { label: t('identifier'), key: 'identifier' },
-  { label: t('nameSrb'), key: 'nameSrb' },
-  { label: t('nameEng'), key: 'nameEng' },
-  { label: t('general:createdBy'), key: 'createdByUser' },
-  { label: t('general:dateCreated'), key: 'dateCreated' },
-  { label: t('general:delete'), key: 'delete' },
+  { text: t('identifier'), key: 'identifier' },
+  { text: t('nameSrb'), key: 'nameSrb' },
+  { text: t('nameEng'), key: 'nameEng' },
+  { text: t('general:createdBy'), key: 'createdByUser' },
+  { text: t('general:dateCreated'), key: 'dateCreated' },
+  { text: t('general:delete'), key: 'delete' },
 ]
 
 export const transformTableTariffPlanCharacteristicGridData = (
@@ -110,14 +110,14 @@ export const transformTableTariffPlanCharacteristicGridData = (
 })
 
 export const getTariffPlanDiscountsTableColumnsLabels = (t: TFunction): GridLabel[] => [
-  { label: t('tariffPlans:discount'), key: 'discount' },
-  { label: t('tariffPlans:minAmountOfTariffPlans'), key: 'minAmountOfTariffPlans' },
-  { label: t('tariffPlans:maxAmountOfTariffPlans'), key: 'maxAmountOfTariffPlans' },
-  { label: t('general:createdBy'), key: 'createdByUser' },
-  { label: t('general:dateCreated'), key: 'dateCreated' },
-  { label: t('general:modifiedBy'), key: 'modifiedByUser' },
-  { label: t('general:dateModified'), key: 'dateModified' },
-  { label: t('general:delete'), key: 'delete' },
+  { text: t('tariffPlans:discount'), key: 'discount' },
+  { text: t('tariffPlans:minAmountOfTariffPlans'), key: 'minAmountOfTariffPlans' },
+  { text: t('tariffPlans:maxAmountOfTariffPlans'), key: 'maxAmountOfTariffPlans' },
+  { text: t('general:createdBy'), key: 'createdByUser' },
+  { text: t('general:dateCreated'), key: 'dateCreated' },
+  { text: t('general:modifiedBy'), key: 'modifiedByUser' },
+  { text: t('general:dateModified'), key: 'dateModified' },
+  { text: t('general:delete'), key: 'delete' },
 ]
 
 export const transformTableTariffPlanDiscountGridData = (
@@ -135,9 +135,9 @@ export const transformTableTariffPlanDiscountGridData = (
 })
 
 export const getSaveTariffPlanDiscountLabels = (t: TFunction): GridLabel[] => [
-  { label: t('tariffPlans:discount'), key: 'discount' },
-  { label: t('tariffPlans:minAmountOfTariffPlans'), key: 'minAmountOfTariffPlans' },
-  { label: t('tariffPlans:maxAmountOfTariffPlans'), key: 'maxAmountOfTariffPlans' },
+  { text: t('tariffPlans:discount'), key: 'discount' },
+  { text: t('tariffPlans:minAmountOfTariffPlans'), key: 'minAmountOfTariffPlans' },
+  { text: t('tariffPlans:maxAmountOfTariffPlans'), key: 'maxAmountOfTariffPlans' },
 ]
 
 export const getSaveTariffPlanDiscountGridData = (discountData: Partial<SaveTariffPlanDiscount>): PageElement => ({

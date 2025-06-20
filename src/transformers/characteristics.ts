@@ -8,14 +8,14 @@ export const getCharacteristicsSaveLabels = (t: TFunction, includeIdentifier: bo
   const labels: GridLabel[] = []
 
   if (includeIdentifier) {
-    labels.push({ label: t('identifier'), key: 'identifier' })
+    labels.push({ text: t('identifier'), key: 'identifier' })
   }
 
   labels.push(
-    { label: t('nameSrb'), key: 'nameSrb' },
-    { label: t('nameEng'), key: 'nameEng' },
-    { label: t('characteristics:value'), key: 'value' },
-    { label: t('description'), key: 'description' },
+    { text: t('nameSrb'), key: 'nameSrb' },
+    { text: t('nameEng'), key: 'nameEng' },
+    { text: t('characteristics:value'), key: 'value' },
+    { text: t('description'), key: 'description' },
   )
 
   return labels
@@ -30,14 +30,14 @@ export const getSaveCharacteristicGridData = (charData: Partial<SaveCharacterist
 })
 
 export const getCharacteristicsTableColumnsLabels = (t: TFunction): GridLabel[] => [
-  { label: t('identifier'), key: 'identifier' },
-  { label: t('nameSrb'), key: 'nameSrb' },
-  { label: t('nameEng'), key: 'nameEng' },
-  { label: t('characteristics:value'), key: 'value' },
-  { label: t('general:createdBy'), key: 'createdByUser' },
-  { label: t('general:modifiedBy'), key: 'modifiedByUser' },
-  { label: t('general:dateCreated'), key: 'dateCreated' },
-  { label: t('general:dateModified'), key: 'dateModified' },
+  { text: t('identifier'), key: 'identifier' },
+  { text: t('nameSrb'), key: 'nameSrb' },
+  { text: t('nameEng'), key: 'nameEng' },
+  { text: t('characteristics:value'), key: 'value' },
+  { text: t('general:createdBy'), key: 'createdByUser' },
+  { text: t('general:modifiedBy'), key: 'modifiedByUser' },
+  { text: t('general:dateCreated'), key: 'dateCreated' },
+  { text: t('general:dateModified'), key: 'dateModified' },
 ]
 
 export const transformTableCharacteristicGridData = (charData: Partial<Characteristic>): PageElement => ({
