@@ -1,12 +1,12 @@
 import { Action, ThunkAction, combineReducers, configureStore } from '@reduxjs/toolkit'
-import authReducer from '../features/auth.slice'
+import AuthReducer from '../features/auth.slice'
 import ConfirmReducer from '../features/confirm.slice'
-import notificationReducer from '../features/notifications.slice'
+import NotificationReducer from '../features/notifications.slice'
 import { pcApi } from './apis/core/pc.api'
 
 const rootReducer = combineReducers({
-  auth: authReducer,
-  notifications: notificationReducer,
+  auth: AuthReducer,
+  notifications: NotificationReducer,
   confirm: ConfirmReducer,
   [pcApi.reducerPath]: pcApi.reducer,
 })
