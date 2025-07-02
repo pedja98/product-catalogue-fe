@@ -20,5 +20,6 @@
   "tariffPlanDiscountCreated": "Uspešno je dodat novi popust",
   "maxTpLowerThenMin": "Minimalna količina je veća od maksimalne",
   "createDiscount": "Napravi popust",
-  "discountBadValue": "Vrednost popusta može biti od 1 do 100"
+  "discountBadValue": "Vrednost popusta može biti od 1 do 100",
+  "deleteTpChar12hPassed": "Ne možete izbrisati povezanu karakteristiku 12 sati nakon što je dodata"
 }

@@ -20,5 +20,6 @@
   "tariffPlanDiscountCreated": "New discount is successfully added",
   "maxTpLowerThenMin": "Minimal amount is greater than maximal",
   "createDiscount": "Create discount",
-  "discountBadValue": "The discount value can be from 1 to 100"
+  "discountBadValue": "The discount value can be from 1 to 100",
+  "deleteTpChar12hPassed": "You can not delete a connected characteristic 12 hours after it is added"
 }

@@ -14,6 +14,7 @@ import {
 import Spinner from '../../../components/Spinner'
 import ExpandableTable from '../../../components/ExpandableTable'
 import { TariffPlanCharacteristicsTableProps } from '../../../types/tariffPlans'
+import { checkIfTimeDiffIsMoreThen12h } from '../../../helpers/common'
 
 const TariffPlanCharacteristicsTable: FC<TariffPlanCharacteristicsTableProps> = ({
   tariffPlanId,
@@ -30,6 +31,18 @@ const TariffPlanCharacteristicsTable: FC<TariffPlanCharacteristicsTableProps> = 
   }
 
   const handleCharRelationDelete = (id: string) => {
+    const char = characteristics.find((char) => (char.relationId = id))
+
+    if (checkIfTimeDiffIsMoreThen12h(char?.dateCreated)) {
+      dispatch(
+        setNotification({
+          text: t('tariffPlans:deleteTpChar12hPassed'),
+          type: NotificationType.Success,
+        }),
+      )
+      return
+    }
+
     dispatch(
       showConfirm({
         confirmationText: t('tariffPlans:tariffPlanCharRelationDeletionText'),

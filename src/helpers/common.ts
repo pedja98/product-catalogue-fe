@@ -30,3 +30,11 @@ export const dateFormatter = (dateString?: string): string => {
   const date = new Date(dateString || '')
   return date.toLocaleString('en-GB', { hour12: false })
 }
+
+export const checkIfTimeDiffIsMoreThen12h = (dateString?: string): boolean => {
+  const givenDate = new Date(String(dateString))
+  const now = new Date()
+  const differenceInMs = Math.abs(now.getTime() - givenDate.getTime())
+  const twelveHoursInMs = 12 * 60 * 60 * 1000
+  return differenceInMs > twelveHoursInMs
+}
