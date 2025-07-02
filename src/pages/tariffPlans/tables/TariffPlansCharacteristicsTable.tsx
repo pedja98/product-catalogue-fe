@@ -31,13 +31,13 @@ const TariffPlanCharacteristicsTable: FC<TariffPlanCharacteristicsTableProps> = 
   }
 
   const handleCharRelationDelete = (id: string) => {
-    const char = characteristics.find((char) => (char.relationId = id))
+    const char = characteristics.find((char) => char.relationId == id)
 
     if (checkIfTimeDiffIsMoreThen12h(char?.dateCreated)) {
       dispatch(
         setNotification({
           text: t('tariffPlans:deleteTpChar12hPassed'),
-          type: NotificationType.Success,
+          type: NotificationType.Warning,
         }),
       )
       return
