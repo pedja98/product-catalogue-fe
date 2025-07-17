@@ -115,8 +115,6 @@ export const getTariffPlanDiscountsTableColumnsLabels = (t: TFunction): GridLabe
   { text: t('tariffPlans:maxAmountOfTariffPlans'), key: 'maxAmountOfTariffPlans' },
   { text: t('general:createdBy'), key: 'createdByUser' },
   { text: t('general:dateCreated'), key: 'dateCreated' },
-  { text: t('general:modifiedBy'), key: 'modifiedByUser' },
-  { text: t('general:dateModified'), key: 'dateModified' },
   { text: t('general:delete'), key: 'delete' },
 ]
 
