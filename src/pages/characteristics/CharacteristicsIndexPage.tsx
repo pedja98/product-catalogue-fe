@@ -28,7 +28,7 @@ const CharacteristicsIndexPage = () => {
   return (
     <Grid container sx={{ ml: 1, mt: 1 }}>
       <Grid item>
-        <Typography variant='h4'>{t(`addons:title`).toLocaleUpperCase()}</Typography>
+        <Typography variant='h4'>{t(`characteristics:title`).toLocaleUpperCase()}</Typography>
       </Grid>
       <Grid container direction='row' spacing={2}>
         <Grid item>
