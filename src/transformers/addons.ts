@@ -53,7 +53,7 @@ export const getAddonsTableColumnsLabels = (t: TFunction): GridLabel[] => [
   { text: t('nameSrb'), key: 'nameSrb' },
   { text: t('nameEng'), key: 'nameEng' },
   { text: t('status'), key: 'status' },
-  { text: t('addons:price'), key: 'price' },
+  { text: t('general:price'), key: 'price' },
   { text: t('general:createdBy'), key: 'createdByUser' },
   { text: t('general:modifiedBy'), key: 'modifiedByUser' },
   { text: t('general:dateCreated'), key: 'dateCreated' },

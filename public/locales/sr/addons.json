@@ -4,5 +4,6 @@
   "createAddonLabel": "Kreiraj dodatak",
   "addonCreated": "Dodatak je uspešno kreiran",
   "title": "Dodaci",
-  "addonUpdated": "Dodatak je uspešno izmenjen"
+  "addonUpdated": "Dodatak je uspešno izmenjen",
+  "editAddon": "Izmeni dodatak"
 }

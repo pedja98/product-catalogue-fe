@@ -4,5 +4,6 @@
   "createAddonLabel": "Create addon",
   "addonCreated": "Addon is successfully created",
   "title": "Addons",
-  "addonUpdated": "Addon is successfully updated"
+  "addonUpdated": "Addon is successfully updated",
+  "editAddon": "Edit addon"
 }
